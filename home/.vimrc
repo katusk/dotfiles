@@ -94,7 +94,8 @@ autocmd filetype python set expandtab
 
 " Syntax highlighting, (G)UI related settings
 "====================================================================
-if &t_Co >= 256 || has("gui_running")
+" set t_Co=16                              " Make it work with putty
+if &t_Co >= 16 || has("gui_running")
     let g:solarized_contrast="high"        " Default is 'normal'
     let g:solarized_diffmode="high"        " Default is 'normal'
     let g:solarized_hitrail=1              " Default is '0'
