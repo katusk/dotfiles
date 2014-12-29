@@ -167,8 +167,9 @@ set showcmd        " Show the (partial) command as it is being typed
 set colorcolumn=80 " Show the print margin
 set cursorline     " Highlight the screen line of the cursor
 
-" Plugins
+" Plugin settings
 "====================================================================
+" Eclim                            eclim.org/vim/code_completion.html
 let g:EclimCompletionMethod='omnifunc'
 
 " Reference
