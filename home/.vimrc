@@ -30,6 +30,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'jnurmine/Zenburn'
 Bundle 'tomasr/molokai'
 " Syntax
+Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'http://bitbucket.org/alexcolson/kdb-vim.git'
 
 " Pathogen for the easy bundling of plugins --- using vundle instead
@@ -94,7 +95,7 @@ autocmd filetype python set expandtab
 
 " Syntax highlighting, (G)UI related settings
 "====================================================================
-" set t_Co=16                              " Make it work with putty
+" set t_Co=16   " Putty, Connection > Data, term-type: putty-256color
 if &t_Co >= 16 || has("gui_running")
     let g:solarized_contrast="high"        " Default is 'normal'
     let g:solarized_diffmode="high"        " Default is 'normal'
@@ -165,6 +166,10 @@ set title          " Show the filename in the window titlebar
 set showcmd        " Show the (partial) command as it is being typed
 set colorcolumn=80 " Show the print margin
 set cursorline     " Highlight the screen line of the cursor
+
+" Plugins
+"====================================================================
+let g:EclimCompletionMethod='omnifunc'
 
 " Reference
 "====================================================================
