@@ -41,8 +41,9 @@ Bundle 'xolox/vim-easytags'
 Bundle 'kien/ctrlp.vim'
 " Version control
 Bundle 'airblade/vim-gitgutter'
-" Code checkers
+" Code analysis and completion
 Bundle 'scrooloose/syntastic'
+Bundle 'ervandew/supertab'
 
 " Pathogen for the easy bundling of plugins --- using vundle instead
 "====================================================================
@@ -232,6 +233,16 @@ let g:syntastic_auto_loc_list=1
 " let g:syntastic_aggregate_errors=0
 " let g:EclimFileTypeValidate=0
 " let g:ycm_show_diagnostics_ui=0
+
+" SuperTab                               github.com/ervandew/supertab
+"--------------------------------------------------------------------
+let g:SuperTabDefaultCompletionType='context'
+let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
+let g:SuperTabRetainCompletionDuration='completion'
+let g:SuperTabClosePreviewOnPopupClose=1
+let g:SuperTabMappingForward=',<tab>'
+let g:SuperTabMappingBackward='<nop>'
+let g:SuperTabMappingTabLiteral='<nop>'
 
 " Eclim                            eclim.org/vim/code_completion.html
 "--------------------------------------------------------------------
