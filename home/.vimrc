@@ -22,10 +22,14 @@ endif
 call vundle#rc()
 filetype off
 
-" Plugins managed by vundle
+" Plugins managed by Vundle
 "--------------------------------------------------------------------
 Bundle 'gmarik/vundle'
+" Dependencies                      " Required by xolox/vim-easytags
 Bundle 'xolox/vim-misc'
+                                    " Required by garbas/vim-snipmate
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jnurmine/Zenburn'
@@ -37,13 +41,18 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
-Bundle 'xolox/vim-easytags'
 Bundle 'kien/ctrlp.vim'
+Bundle 'derekwyatt/vim-fswitch'
 " Version control
 Bundle 'airblade/vim-gitgutter'
 " Code analysis and completion
+Bundle 'xolox/vim-easytags'
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+" Editing
+Bundle 'Raimondi/delimitMate'
 
 " Basic editing behaviour
 "====================================================================
@@ -60,6 +69,7 @@ set softtabstop=4 " Tab is N spaces in Insert mode
 set backspace=2   " Allow i_backspacing over indent, eol, and start
 set autoindent    " Always set autoindenting on
 set copyindent    " Copy the previous indentation on autoindenting
+set smartindent   " For C-like programs. Also see :h C-indenting
 set shiftround    " Use multiples of 'sw' upon '<' and '>'
 set smarttab      " Insert tabs at ^ according to'sw', not 'ts'
 
@@ -203,6 +213,10 @@ let g:ctrlp_show_hidden=0
 let g:ctrlp_max_files=8000
 let g:ctrlp_lazy_update=120
 
+" FSwitch                           github.com/derekwyatt/vim-fswitch
+"--------------------------------------------------------------------
+nmap <silent> <Leader>a :FSHere<cr>
+
 " Gitgutter              github.com/airblade/vim-gitgutter/issues/164
 "--------------------------------------------------------------------
 highlight clear SignColumn                   " theme color is strange
@@ -218,7 +232,7 @@ let g:SuperTabDefaultCompletionType='context'
 let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
 let g:SuperTabRetainCompletionDuration='completion'
 let g:SuperTabClosePreviewOnPopupClose=1
-let g:SuperTabMappingForward=',<tab>'
+let g:SuperTabMappingForward=',<tab>'       " Tab is used by SnipMate
 let g:SuperTabMappingBackward='<nop>'
 let g:SuperTabMappingTabLiteral='<nop>'
 let g:SuperTabLongestEnhanced=1
