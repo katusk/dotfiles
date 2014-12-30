@@ -5,12 +5,12 @@ if has("win32") || has("win64")
     set directory=$TEMP,.        " Swap file fix under Windows
     set backupdir=$TEMP,.        " Change backup directory too
     cd $USERPROFILE              " Set starting directory
-endif              " $HOME --- markmail.org/message/wbzs4gmtvkbewgxi
+endif               " $HOME --- markmail.org/message/wbzs4gmtvkbewgxi
 
 " Vi compatibility and related options
 "====================================================================
-set nocompatible   " Turn off Vi compatibility for all Vim features
-set cpo+=$         " Show '$' after the last character to be changed
+set nocompatible    " Turn off Vi compatibility for all Vim features
+set cpo+=$          " Show '$' after the last character to be changed
 
 " Vundle for the easy bundling and updating of plugins
 "====================================================================
@@ -22,7 +22,7 @@ endif
 call vundle#rc()
 filetype off
 
-" Bundling plugins --- using vundle instead of 'tpope/vim-pathogen'
+" Plugins managed by vundle
 "--------------------------------------------------------------------
 Bundle 'gmarik/vundle'
 Bundle 'xolox/vim-misc'
@@ -44,11 +44,6 @@ Bundle 'airblade/vim-gitgutter'
 " Code analysis and completion
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
-
-" Pathogen for the easy bundling of plugins --- using vundle instead
-"====================================================================
-" call pathogen#infect()     " Include subdirs under ~/.vim/bundle
-" call pathogen#helptags()   " Generate help tags for those plugins
 
 " Basic editing behaviour
 "====================================================================
@@ -158,20 +153,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap j gj
 nnoremap k gk
 
-" Easy window navigation
-"''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-" map <C-h> <C-w>h
-" map <C-j> <C-w>j
-" map <C-k> <C-w>k
-" map <C-l> <C-w>l
-
-" Get a life, get a sane status line
+" Status line and other indicators
 "====================================================================
 set laststatus=2   " Always show the status line
-" See http://learnvimscriptthehardway.stevelosh.com/chapters/17.html
-
-" Other indicators
-"''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 set ruler          " Show the cursor position
 set showmode       " Show the current mode
 set title          " Show the filename in the window titlebar
@@ -230,9 +214,6 @@ call gitgutter#highlight#define_highlights() " reload gitgutter color
 " Syntastic      github.com/scrooloose/syntastic/wiki/Syntax-Checkers
 "--------------------------------------------------------------------
 let g:syntastic_auto_loc_list=1
-" let g:syntastic_aggregate_errors=0
-" let g:EclimFileTypeValidate=0
-" let g:ycm_show_diagnostics_ui=0
 
 " SuperTab                               github.com/ervandew/supertab
 "--------------------------------------------------------------------
@@ -247,13 +228,4 @@ let g:SuperTabMappingTabLiteral='<nop>'
 " Eclim                            eclim.org/vim/code_completion.html
 "--------------------------------------------------------------------
 let g:EclimCompletionMethod='omnifunc'
-
-" Reference
-"====================================================================
-" Check out the following links for more .vimrc related goodies.
-" -- github.com/tpope/vim-pathogen
-" -- nvie.com/posts/how-i-boosted-my-vim
-" -- github.com/derekwyatt/vim-config
-" -- paulgorman.org/technical/dotfiles/vimrc.txt
-" -- dotfiles.github.io
 
