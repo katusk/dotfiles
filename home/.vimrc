@@ -25,6 +25,7 @@ filetype off
 " Bundling plugins --- using vundle instead of 'tpope/vim-pathogen'
 "--------------------------------------------------------------------
 Bundle 'gmarik/vundle'
+Bundle 'xolox/vim-misc'
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jnurmine/Zenburn'
@@ -36,6 +37,7 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
+Bundle 'xolox/vim-easytags'
 Bundle 'kien/ctrlp.vim'
 " Version control
 Bundle 'airblade/vim-gitgutter'
@@ -196,6 +198,17 @@ let NERDTreeDirArrows=0
 " Tagbar                                  majutsushi.github.io/tagbar
 "--------------------------------------------------------------------
 let g:tagbar_iconchars=['+', '-']
+
+" Easytags                          peterodding.com/code/vim/easytags
+"--------------------------------------------------------------------
+set tags=./tags;
+let g:easytags_dynamic_files=2
+let g:easytags_include_members=1
+let g:easytags_events=['BufWritePost']
+let g:easytags_async=1
+let g:easytags_auto_update=1
+let g:easytags_auto_highlight=1
+let g:easytags_syntax_keyword='always'
 
 " CtrlP                                      kien.github.io/ctrlp.vim
 "--------------------------------------------------------------------
