@@ -30,7 +30,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jnurmine/Zenburn'
 Bundle 'tomasr/molokai'
-" Syntax
+" Syntax highlighting
 Bundle 'http://bitbucket.org/alexcolson/kdb-vim.git'
 Bundle 'octol/vim-cpp-enhanced-highlight'
 " Navigation
@@ -41,6 +41,8 @@ Bundle 'xolox/vim-easytags'
 Bundle 'kien/ctrlp.vim'
 " Version control
 Bundle 'airblade/vim-gitgutter'
+" Code checkers
+Bundle 'scrooloose/syntastic'
 
 " Pathogen for the easy bundling of plugins --- using vundle instead
 "====================================================================
@@ -223,6 +225,13 @@ let g:ctrlp_lazy_update=120
 "--------------------------------------------------------------------
 highlight clear SignColumn                   " theme color is strange
 call gitgutter#highlight#define_highlights() " reload gitgutter color
+
+" Syntastic      github.com/scrooloose/syntastic/wiki/Syntax-Checkers
+"--------------------------------------------------------------------
+let g:syntastic_auto_loc_list=1
+" let g:syntastic_aggregate_errors=0
+" let g:EclimFileTypeValidate=0
+" let g:ycm_show_diagnostics_ui=0
 
 " Eclim                            eclim.org/vim/code_completion.html
 "--------------------------------------------------------------------
