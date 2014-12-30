@@ -194,10 +194,13 @@ let g:airline#extensions#tabline#right_alt_sep=''
 " NERDTree                                            :help NERD_tree
 "--------------------------------------------------------------------
 let NERDTreeDirArrows=0
+let NERDTreeShowHidden=0
+let NERDTreeMinimalUI=1
 
 " Tagbar                                  majutsushi.github.io/tagbar
 "--------------------------------------------------------------------
 let g:tagbar_iconchars=['+', '-']
+let g:tagbar_compact=1
 
 " Easytags                          peterodding.com/code/vim/easytags
 "--------------------------------------------------------------------
