@@ -45,6 +45,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'derekwyatt/vim-fswitch'
 " Version control
 Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-fugitive'
 " Code analysis and completion
 Bundle 'xolox/vim-easytags'
 Bundle 'scrooloose/syntastic'
