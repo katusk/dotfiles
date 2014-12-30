@@ -35,6 +35,7 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 " Navigation
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 " Version control
 Bundle 'airblade/vim-gitgutter'
@@ -191,6 +192,10 @@ let g:airline#extensions#tabline#right_alt_sep=''
 " NERDTree                                            :help NERD_tree
 "--------------------------------------------------------------------
 let NERDTreeDirArrows=0
+
+" Tagbar                                  majutsushi.github.io/tagbar
+"--------------------------------------------------------------------
+let g:tagbar_iconchars=['+', '-']
 
 " CtrlP                                      kien.github.io/ctrlp.vim
 "--------------------------------------------------------------------
