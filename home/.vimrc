@@ -210,11 +210,11 @@ let g:tagbar_compact=1
 set tags=./tags;
 let g:easytags_dynamic_files=2
 let g:easytags_include_members=1
-let g:easytags_events=['BufWritePost']
-let g:easytags_async=1
+let g:easytags_events=['BufReadPost', 'BufWritePost']
+let g:easytags_syntax_keyword='always'
 let g:easytags_auto_update=1
 let g:easytags_auto_highlight=1
-let g:easytags_syntax_keyword='always'
+let g:easytags_async=1
 
 " CtrlP                                      kien.github.io/ctrlp.vim
 "--------------------------------------------------------------------
