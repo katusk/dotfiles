@@ -5,7 +5,7 @@ if has("win32") || has("win64")
     set directory=$TEMP,.        " Swap file fix under Windows
     set backupdir=$TEMP,.        " Change backup directory too
     cd $USERPROFILE              " Set starting directory
-endif    " See $HOME --- http://markmail.org/message/wbzs4gmtvkbewgxi
+endif              " $HOME --- markmail.org/message/wbzs4gmtvkbewgxi
 
 " Vi compatibility and related options
 "====================================================================
@@ -22,9 +22,10 @@ endif
 call vundle#rc()
 filetype off
 
-" Bundling plugins --- use vundle instead of 'tpope/vim-pathogen'
+" Bundling plugins --- using vundle instead of 'tpope/vim-pathogen'
 "--------------------------------------------------------------------
 Bundle 'gmarik/vundle'
+Bundle 'bling/vim-airline'
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jnurmine/Zenburn'
@@ -169,15 +170,29 @@ set cursorline     " Highlight the screen line of the cursor
 
 " Plugin settings
 "====================================================================
+
+" Airline                                               :help airline
+"--------------------------------------------------------------------
+let g:airline_left_sep=''
+let g:airline_left_alt_sep=''
+let g:airline_right_sep=''
+let g:airline_right_alt_sep=''
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#left_sep=''
+let g:airline#extensions#tabline#left_alt_sep=''
+let g:airline#extensions#tabline#right_sep=''
+let g:airline#extensions#tabline#right_alt_sep=''
+
 " Eclim                            eclim.org/vim/code_completion.html
+"--------------------------------------------------------------------
 let g:EclimCompletionMethod='omnifunc'
 
 " Reference
 "====================================================================
-" Check out the following links for more .vimrc related goodies:
-" -- https://github.com/tpope/vim-pathogen
-" -- http://nvie.com/posts/how-i-boosted-my-vim
-" -- http://github.com/derekwyatt/vim-config
-" -- http://paulgorman.org/technical/dotfiles/vimrc.txt
-" -- http://dotfiles.github.io/
+" Check out the following links for more .vimrc related goodies.
+" -- github.com/tpope/vim-pathogen
+" -- nvie.com/posts/how-i-boosted-my-vim
+" -- github.com/derekwyatt/vim-config
+" -- paulgorman.org/technical/dotfiles/vimrc.txt
+" -- dotfiles.github.io
 
