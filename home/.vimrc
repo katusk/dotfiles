@@ -78,7 +78,7 @@ set sidescrolloff=10    " Min. cols to left and to right of cursor
 set sidescroll=1        " Min. cols to scroll horizontally
 
 " Folds
-"''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+"--------------------------------------------------------------------
 set foldmethod=indent   " Fold based on indent
 set foldnestmax=3       " Deepest fold is N levels
 set nofoldenable        " Do not fold by default
@@ -93,6 +93,14 @@ else
     set undodir=~/.vim/undodir
 endif
 set undofile            " Enable persistent undo
+
+" Enhanced completion
+"--------------------------------------------------------------------
+set wildmode=list:longest      " Enhanced command line completion
+set wildignore=*.o,*.obj,*~    " Stuff to ignore when tab completing
+set wildmenu                   " Scroll thru matches by C-n and C-p
+                               " Insert mode completion enhancement
+set completeopt=menuone,longest,preview
 
 " File type plugins
 "--------------------------------------------------------------------
@@ -127,29 +135,18 @@ else
     set background=dark
 endif
 
-" Enhanced mode for command-line completion
-"''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-set wildmode=list:longest
-set wildignore=*.o,*.obj,*~    " Stuff to ignore when tab completing
-set wildmenu                   " Scroll thru matches by C-n and C-p
-
 " Mappings --- NB No comment in same line as map command
 "====================================================================
 set pastetoggle=<F2>           " Paste mode toggle not to get crazy
 let mapleader=","              " Change the mapleader from '\' to ','
-" Quick way to clear the search buffer. Also see :noh
+                               " Quickly clear the search buffer
 nmap <silent> ,/ :nohls<CR>
-" Other good alternatives for exiting Insert mode: <M-j> jk ;; ,,
+                               " Exiting Insert mode: <M-j> jk ;; ,,
 inoremap ,, <Esc>
-
-" Quickly edit/reload the vimrc file
-"''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                               " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" If line wrapping is enabled, jump to the next screen row in case of
-" a long wrapped line, instead of jumping over to the next line
-"''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                               " Always jump to the next screen row
 nnoremap j gj
 nnoremap k gk
 
@@ -224,6 +221,7 @@ let g:SuperTabClosePreviewOnPopupClose=1
 let g:SuperTabMappingForward=',<tab>'
 let g:SuperTabMappingBackward='<nop>'
 let g:SuperTabMappingTabLiteral='<nop>'
+let g:SuperTabLongestEnhanced=1
 
 " Eclim                            eclim.org/vim/code_completion.html
 "--------------------------------------------------------------------
