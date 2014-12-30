@@ -25,14 +25,17 @@ filetype off
 " Bundling plugins --- using vundle instead of 'tpope/vim-pathogen'
 "--------------------------------------------------------------------
 Bundle 'gmarik/vundle'
-Bundle 'bling/vim-airline'
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jnurmine/Zenburn'
 Bundle 'tomasr/molokai'
 " Syntax
-Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'http://bitbucket.org/alexcolson/kdb-vim.git'
+Bundle 'octol/vim-cpp-enhanced-highlight'
+" Navigation
+Bundle 'bling/vim-airline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
 
 " Pathogen for the easy bundling of plugins --- using vundle instead
 "====================================================================
@@ -182,6 +185,16 @@ let g:airline#extensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#tabline#right_sep=''
 let g:airline#extensions#tabline#right_alt_sep=''
+
+" NERDTree                                            :help NERD_tree
+"--------------------------------------------------------------------
+let NERDTreeDirArrows=0
+
+" CtrlP                                      kien.github.io/ctrlp.vim
+"--------------------------------------------------------------------
+let g:ctrlp_show_hidden=0
+let g:ctrlp_max_files=8000
+let g:ctrlp_lazy_update=120
 
 " Eclim                            eclim.org/vim/code_completion.html
 "--------------------------------------------------------------------
