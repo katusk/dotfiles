@@ -36,6 +36,8 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
+" Version control
+Bundle 'airblade/vim-gitgutter'
 
 " Pathogen for the easy bundling of plugins --- using vundle instead
 "====================================================================
@@ -195,6 +197,11 @@ let NERDTreeDirArrows=0
 let g:ctrlp_show_hidden=0
 let g:ctrlp_max_files=8000
 let g:ctrlp_lazy_update=120
+
+" Gitgutter              github.com/airblade/vim-gitgutter/issues/164
+"--------------------------------------------------------------------
+highlight clear SignColumn                   " theme color is strange
+call gitgutter#highlight#define_highlights() " reload gitgutter color
 
 " Eclim                            eclim.org/vim/code_completion.html
 "--------------------------------------------------------------------
