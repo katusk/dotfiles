@@ -9,8 +9,8 @@ endif
 
 " Vi compatibility and related options
 "===============================================================================
-set nocompatible    " Turn off Vi compatibility for all Vim features
-set cpo+=$          " Show '$' after the last character to be changed
+set nocompatible        " Turn off Vi compatibility for all Vim features
+set cpo+=$              " Show '$' after the last character to be changed
 
 " Vundle for the easy bundling and updating of plugins
 "===============================================================================
@@ -57,27 +57,27 @@ Bundle 'Raimondi/delimitMate'
 
 " Basic editing behaviour
 "===============================================================================
-set hidden        " Buffer is hidden, not unloaded, when abandoned
-set number        " Always show line numbers
-set showmatch     " Set show matching parenthesis
-set wrap          " Enable long line wrapping
-set linebreak     " Wrap long lines at 'breakat'; only if 'nolist'
+set hidden              " Buffer is hidden, not unloaded, when abandoned
+set number              " Always show line numbers
+set showmatch           " Set show matching parenthesis
+set wrap                " Enable long line wrapping
+set linebreak           " Wrap long lines at 'breakat'; only if 'nolist'
 
-set tabstop=4     " A tab is N spaces --- tedlogan.com/techblog3.html
-set expandtab     " Always expand <Tab> to spaces
-set shiftwidth=4  " N spaces to use for autoindenting
-set softtabstop=4 " Tab is N spaces in Insert mode
-set backspace=2   " Allow i_backspacing over indent, eol, and start
-set autoindent    " Always set autoindenting on
-set copyindent    " Copy the previous indentation on autoindenting
-set smartindent   " For C-like programs. Also see :h C-indenting
-set shiftround    " Use multiples of 'sw' upon '<' and '>'
-set smarttab      " Insert tabs at ^ according to'sw', not 'ts'
+set tabstop=4           " A tab is N spaces --- tedlogan.com/techblog3.html
+set expandtab           " Always expand <Tab> to spaces
+set shiftwidth=4        " N spaces to use for autoindenting
+set softtabstop=4       " Tab is N spaces in Insert mode
+set backspace=2         " Allow i_backspacing over indent, eol, and start
+set autoindent          " Always set autoindenting on
+set copyindent          " Copy the previous indentation on autoindenting
+set smartindent         " For C-like programs. Also see :h C-indenting
+set shiftround          " Use multiples of 'sw' upon '<' and '>'
+set smarttab            " Insert tabs at ^ according to'sw', not 'ts'
 
-set hlsearch      " Highlight search terms. Switch off with :nohls
-set ignorecase    " Ignore case when searching. 'scs' overrides this
-set smartcase     " Ignore case if search pattern is all lowercase
-set incsearch     " Show search matches as you type
+set hlsearch            " Highlight search terms. Switch off with :nohls
+set ignorecase          " Ignore case when searching. 'scs' overrides this
+set smartcase           " Ignore case if search pattern is all lowercase
+set incsearch           " Show search matches as you type
 
 " Advanced editing behaviour
 "===============================================================================
