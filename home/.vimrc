@@ -4,7 +4,9 @@ language messages en_US.UTF-8    " Language of the messages/UI (Vim)
 if has("win32") || has("win64")
     set directory=$TEMP,.        " Swap file fix under Windows
     set backupdir=$TEMP,.        " Change backup directory too
-    cd $USERPROFILE              " Set starting directory
+    if has("gui_win32")
+        cd $USERPROFILE          " Set starting directory
+    endif
 endif
 
 " Vi compatibility and related options
