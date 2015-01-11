@@ -5,15 +5,15 @@ if has("win32") || has("win64")
     set directory=$TEMP,.        " Swap file fix under Windows
     set backupdir=$TEMP,.        " Change backup directory too
     cd $USERPROFILE              " Set starting directory
-endif               " $HOME --- markmail.org/message/wbzs4gmtvkbewgxi
+endif
 
 " Vi compatibility and related options
-"====================================================================
+"===============================================================================
 set nocompatible    " Turn off Vi compatibility for all Vim features
 set cpo+=$          " Show '$' after the last character to be changed
 
 " Vundle for the easy bundling and updating of plugins
-"====================================================================
+"===============================================================================
 if has("win32") || has("win64")
     set rtp+=$USERPROFILE\.vim\bundle\vundle\
 else
@@ -23,11 +23,11 @@ call vundle#rc()
 filetype off
 
 " Plugins managed by Vundle
-"--------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 Bundle 'gmarik/vundle'
-" Dependencies                      " Required by xolox/vim-easytags
+" Dependencies                           " Required by xolox/vim-easytags
 Bundle 'xolox/vim-misc'
-                                    " Required by garbas/vim-snipmate
+                                         " Required by garbas/vim-snipmate
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 " Color themes
@@ -56,7 +56,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'Raimondi/delimitMate'
 
 " Basic editing behaviour
-"====================================================================
+"===============================================================================
 set hidden        " Buffer is hidden, not unloaded, when abandoned
 set number        " Always show line numbers
 set showmatch     " Set show matching parenthesis
@@ -80,7 +80,7 @@ set smartcase     " Ignore case if search pattern is all lowercase
 set incsearch     " Show search matches as you type
 
 " Advanced editing behaviour
-"====================================================================
+"===============================================================================
 set nolist              " Disable whitespace visual aids. See 'lcs'
 set listchars=tab:>.,trail:.,extends:#,nbsp:~
 
@@ -89,13 +89,13 @@ set sidescrolloff=10    " Min. cols to left and to right of cursor
 set sidescroll=1        " Min. cols to scroll horizontally
 
 " Folds
-"--------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 set foldmethod=indent   " Fold based on indent
 set foldnestmax=3       " Deepest fold is N levels
 set nofoldenable        " Do not fold by default
 
 " History
-"--------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 set history=1000        " Remember more commands and search history
 set undolevels=1000     " Use this many of levels of undo
 if has("win32") || has("win64")
@@ -106,22 +106,21 @@ endif
 set undofile            " Enable persistent undo
 
 " Enhanced completion
-"--------------------------------------------------------------------
-set wildmode=list:longest      " Enhanced command line completion
-set wildignore=*.o,*.obj,*~    " Stuff to ignore when tab completing
-set wildmenu                   " Scroll thru matches by C-n and C-p
-                               " Insert mode completion enhancement
-set completeopt=menuone,longest,preview
+"-------------------------------------------------------------------------------
+set wildmode=list:longest                  " Enhanced command line completion
+set wildignore=*.o,*.obj,*~                " Stuff to ignore when tab completing
+set wildmenu                               " Scroll thru matches by C-n and C-p
+set completeopt=menuone,longest,preview    " Insert mode completion enhancement
 
 " File type plugins
-"--------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 filetype plugin indent on
 autocmd filetype make set noexpandtab
 autocmd filetype python set expandtab
 
 " Syntax highlighting, (G)UI related settings
-"====================================================================
-" set t_Co=16   " Putty, Connection > Data, term-type: putty-256color
+"===============================================================================
+" set t_Co=16              " Putty, Connection > Data, term-type: putty-256color
 if &t_Co >= 16 || has("gui_running")
     let g:solarized_contrast="high"        " Default is 'normal'
     let g:solarized_diffmode="high"        " Default is 'normal'
@@ -146,8 +145,8 @@ else
     set background=dark
 endif
 
-" Mappings --- NB No comment in same line as map command
-"====================================================================
+" Mappings                     " NB No comment in same line as map command
+"===============================================================================
 set pastetoggle=<F2>           " Paste mode toggle not to get crazy
 let mapleader=","              " Change the mapleader from '\' to ','
                                " Quickly clear the search buffer
@@ -162,20 +161,20 @@ nnoremap j gj
 nnoremap k gk
 
 " Status line and other indicators
-"====================================================================
-set laststatus=2   " Always show the status line
-set ruler          " Show the cursor position
-set showmode       " Show the current mode
-set title          " Show the filename in the window titlebar
-set showcmd        " Show the (partial) command as it is being typed
-set colorcolumn=80 " Show the print margin
-set cursorline     " Highlight the screen line of the cursor
+"===============================================================================
+set laststatus=2               " Always show the status line
+set ruler                      " Show the cursor position
+set showmode                   " Show the current mode
+set title                      " Show the filename in the window titlebar
+set showcmd                    " Show the (partial) command as it is being typed
+set colorcolumn=80             " Show the print margin
+set cursorline                 " Highlight the screen line of the cursor
 
 " Plugin settings
-"====================================================================
+"===============================================================================
 
-" Airline                                               :help airline
-"--------------------------------------------------------------------
+" Airline                                                          :help airline
+"-------------------------------------------------------------------------------
 let g:airline_left_sep=''
 let g:airline_left_alt_sep=''
 let g:airline_right_sep=''
@@ -186,19 +185,19 @@ let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#tabline#right_sep=''
 let g:airline#extensions#tabline#right_alt_sep=''
 
-" NERDTree                                            :help NERD_tree
-"--------------------------------------------------------------------
+" NERDTree                                                       :help NERD_tree
+"-------------------------------------------------------------------------------
 let NERDTreeDirArrows=0
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI=1
 
-" Tagbar                                  majutsushi.github.io/tagbar
-"--------------------------------------------------------------------
+" Tagbar                                             majutsushi.github.io/tagbar
+"-------------------------------------------------------------------------------
 let g:tagbar_iconchars=['+', '-']
 let g:tagbar_compact=1
 
-" Easytags                          peterodding.com/code/vim/easytags
-"--------------------------------------------------------------------
+" Easytags                                     peterodding.com/code/vim/easytags
+"-------------------------------------------------------------------------------
 set tags=./tags;
 let g:easytags_dynamic_files=2
 let g:easytags_include_members=1
@@ -208,37 +207,37 @@ let g:easytags_auto_update=1
 let g:easytags_auto_highlight=1
 let g:easytags_async=1
 
-" CtrlP                                      kien.github.io/ctrlp.vim
-"--------------------------------------------------------------------
+" CtrlP                                                 kien.github.io/ctrlp.vim
+"-------------------------------------------------------------------------------
 let g:ctrlp_show_hidden=0
 let g:ctrlp_max_files=8000
 let g:ctrlp_lazy_update=120
 
-" FSwitch                           github.com/derekwyatt/vim-fswitch
-"--------------------------------------------------------------------
+" FSwitch                                      github.com/derekwyatt/vim-fswitch
+"-------------------------------------------------------------------------------
 nmap <silent> <Leader>a :FSHere<cr>
 
-" Gitgutter              github.com/airblade/vim-gitgutter/issues/164
-"--------------------------------------------------------------------
-highlight clear SignColumn                   " theme color is strange
-call gitgutter#highlight#define_highlights() " reload gitgutter color
+" Gitgutter                         github.com/airblade/vim-gitgutter/issues/164
+"-------------------------------------------------------------------------------
+highlight clear SignColumn                           " theme color is strange
+call gitgutter#highlight#define_highlights()         " reload gitgutter color
 
-" Syntastic      github.com/scrooloose/syntastic/wiki/Syntax-Checkers
-"--------------------------------------------------------------------
+" Syntastic                 github.com/scrooloose/syntastic/wiki/Syntax-Checkers
+"-------------------------------------------------------------------------------
 let g:syntastic_auto_loc_list=1
 
-" SuperTab                               github.com/ervandew/supertab
-"--------------------------------------------------------------------
+" SuperTab                                          github.com/ervandew/supertab
+"-------------------------------------------------------------------------------
 let g:SuperTabDefaultCompletionType='context'
 let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
 let g:SuperTabRetainCompletionDuration='completion'
 let g:SuperTabClosePreviewOnPopupClose=1
-let g:SuperTabMappingForward=',<tab>'       " Tab is used by SnipMate
+let g:SuperTabMappingForward=',<tab>'                " Tab is used by SnipMate
 let g:SuperTabMappingBackward='<nop>'
 let g:SuperTabMappingTabLiteral='<nop>'
 let g:SuperTabLongestEnhanced=1
 
-" Eclim                            eclim.org/vim/code_completion.html
-"--------------------------------------------------------------------
+" Eclim                                       eclim.org/vim/code_completion.html
+"-------------------------------------------------------------------------------
 let g:EclimCompletionMethod='omnifunc'
 
