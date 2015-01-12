@@ -1,0 +1,32 @@
+" Editing behaviour
+"===============================================================================
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab              " Always expand <Tab> to spaces
+set autoindent             " Always set autoindenting on
+set smartindent            " For C-like programs
+set shiftround             " Use multiples of 'sw' upon '<' and '>'
+
+set hlsearch               " Highlight search terms. Switch off with :nohls
+set ignorecase             " Ignore case when searching
+set smartcase              " Ignore case if search pattern is all lowercase
+set incsearch              " Show search matches as you type
+
+set scrolloff=5
+set clipboard+=unnamed
+
+" Mappings
+"===============================================================================
+inoremap ,, <Esc>
+
+" Indicators
+"===============================================================================
+set nolist                 " Disable whitespace visual aids
+set number                 " Always show line numbers
+set cursorline             " Highlight the screen line of the cursor
+
+" Vrapper settings
+"===============================================================================
+set noatomicinsert         " Inserts should not be atomic operations
+set contentassistmode      " C-n & C-p to move in content-assist dropdown
