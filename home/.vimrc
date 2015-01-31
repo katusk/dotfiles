@@ -117,8 +117,8 @@ set completeopt=menuone,longest,preview    " Insert mode completion enhancement
 " File type plugins
 "-------------------------------------------------------------------------------
 filetype plugin indent on
-autocmd filetype make set noexpandtab
-autocmd filetype python set expandtab
+autocmd FileType make set noexpandtab
+autocmd FileType python set expandtab
 
 " Syntax highlighting, (G)UI related settings
 "===============================================================================
