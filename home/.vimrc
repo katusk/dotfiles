@@ -133,6 +133,7 @@ if &t_Co > 2 || has("gui_running")
     syntax on
 endif
 if has("gui_running")
+    set lines=30 columns=90
     set background=light
     set guicursor+=a:blinkon0              " Disable cursor blinking
     set guioptions-=T                      " Turn off gVim toolbar
@@ -221,8 +222,10 @@ nmap <silent> <Leader>a :FSHere<cr>
 
 " Gitgutter                         github.com/airblade/vim-gitgutter/issues/164
 "-------------------------------------------------------------------------------
-highlight clear SignColumn                           " theme color is strange
-call gitgutter#highlight#define_highlights()         " reload gitgutter color
+if exists("*gitgutter#highlight#define_highlights")
+    highlight clear SignColumn                       " theme color is strange
+    call gitgutter#highlight#define_highlights()     " reload gitgutter color
+endif
 
 " Syntastic                 github.com/scrooloose/syntastic/wiki/Syntax-Checkers
 "-------------------------------------------------------------------------------
