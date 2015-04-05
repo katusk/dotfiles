@@ -154,7 +154,7 @@ endif
 set pastetoggle=<F2>     " Paste mode toggle not to get crazy
 let mapleader=","        " Change the mapleader from '\' to ','
                          " Quickly clear the search buffer
-nmap <silent> ,/ :nohls<C>
+nmap <silent> ,/ :nohls<CR>
                          " Exiting Insert mode: <M-j> jk ;; ,,
 inoremap ,, <Esc>
                          " Quickly edit/reload the vimrc file
