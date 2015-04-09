@@ -7,6 +7,7 @@ git clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 
 # Reminders
 set +x; echo "Do not forget the following:"
+echo "-- alias homeshick=\"$HOME/.homesick/repos/homeshick/bin/homeshick\""
 echo "-- Symlink your homes by running \"homeshick link\""
 echo "-- Install vim bundles by running :BundleInstall in vim"
 echo "-- Set up your colors; see http://ethanschoonover.com/solarized"
