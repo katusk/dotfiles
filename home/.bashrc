@@ -9,6 +9,10 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias homeshick="$HOME/.homesick/repos/homeshick/bin/homeshick"
 set -o vi
+
+alias homeshick="$HOME/.homesick/repos/homeshick/bin/homeshick"
+
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export MC_SKIN=$HOME/.mc/colors/solarized.ini
 

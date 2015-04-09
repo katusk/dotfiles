@@ -6,6 +6,6 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
-export MC_SKIN=$HOME/.mc/colors/solarized.ini
+# ...
+# NOTE: all settings are moved to .bashrc
 
