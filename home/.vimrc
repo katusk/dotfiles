@@ -119,6 +119,7 @@ set completeopt=menuone,longest,preview
 "-------------------------------------------------------------------------
 filetype plugin indent on
 autocmd FileType make set noexpandtab
+autocmd FileType gitconfig set noexpandtab
 autocmd FileType python set expandtab
 
 " Syntax highlighting, (G)UI related settings

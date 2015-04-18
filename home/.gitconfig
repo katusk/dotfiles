@@ -1,0 +1,7 @@
+[include]
+	path = ~/.gitconfig_private
+[core]
+	editor = vi
+	excludesfile = ~/.gitignore_global
+[push]
+	default = simple
