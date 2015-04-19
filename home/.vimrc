@@ -59,6 +59,8 @@ Bundle 'Raimondi/delimitMate'
 
 " Basic editing behaviour
 "=========================================================================
+set mouse=a            " Enable mouse in all modes
+set ttymouse=xterm2    " Terminal type for mouse codes
 set hidden             " Buffer is hidden, not unloaded, when abandoned
 set number             " Always show line numbers
 set showmatch          " Set show matching parenthesis
