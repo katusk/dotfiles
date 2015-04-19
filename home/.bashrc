@@ -12,6 +12,7 @@ fi
 set -o vi
 
 alias homeshick="$HOME/.homesick/repos/homeshick/bin/homeshick"
+alias la='ls --color=auto -la'
 
 export EDITOR=vi
 export HISTSIZE=8192
