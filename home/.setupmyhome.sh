@@ -1,4 +1,5 @@
 #!/bin/bash -ex
+# wget -nc -P ~ https://raw.githubusercontent.com/katusk/dotfiles/master/home/.setupmyhome.sh
 
 # Tries to pull repo $2, clones it from $1 otherwise
 function git_pull_or_clone {
@@ -6,15 +7,15 @@ function git_pull_or_clone {
 }
 
 # Install homeshick, my dotfiles, vundle, and mc skin
-git_pull_or_clone git://github.com/katusk/dotfiles.git $HOME/.homesick/repos/dotfiles
-git_pull_or_clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
-git_pull_or_clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
-wget -nc -P $HOME/.mc/colors https://raw.github.com/iwfmp/mc-solarized-skin/master/solarized.ini
+git_pull_or_clone git://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
+git_pull_or_clone git://github.com/katusk/dotfiles.git ~/.homesick/repos/dotfiles
+git_pull_or_clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+wget -nc -P ~/.mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-skin/master/solarized.ini
 
 # Reminders
 set +x
 echo "Do not forget the following:"
-echo "-- alias homeshick=\"$HOME/.homesick/repos/homeshick/bin/homeshick\""
-echo "-- Symlink your homes by running \"homeshick link\""
-echo "-- Install vim bundles by running :BundleInstall in vim"
-echo "-- Set up your colors; see http://ethanschoonover.com/solarized"
+echo "# source ~/.bashrc"
+echo "# homeshick link
+echo "# vim +BundleInstall +qall"
+echo "# lynx http://ethanschoonover.com/solarized"
