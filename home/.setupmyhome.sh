@@ -14,8 +14,8 @@ wget -nc -P ~/.mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-sk
 
 # Reminders
 set +x
-echo "Do not forget the following:"
-echo "# source ~/.bashrc"
-echo "# homeshick link
-echo "# vim +BundleInstall +qall"
-echo "# lynx http://ethanschoonover.com/solarized"
+echo "*** Do not forget the following ***"
+echo "source ~/.bashrc"
+echo "homeshick link
+echo "vim +BundleInstall +qall"
+echo "lynx http://ethanschoonover.com/solarized"
