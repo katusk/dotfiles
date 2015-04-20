@@ -19,3 +19,4 @@ export HISTSIZE=8192
 export CLICOLOR=1
 export PATH=$PATH:~/.local/bin:~/bin
 export MC_SKIN=~/.mc/colors/solarized.ini
+export LYNX_LSS=~/.lynx.lss
