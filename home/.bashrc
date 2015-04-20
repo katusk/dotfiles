@@ -14,7 +14,7 @@ set -o vi
 alias homeshick="~/.homesick/repos/homeshick/bin/homeshick"
 alias la='ls --color=auto -la'
 
-export EDITOR=vi
+export EDITOR=vim
 export HISTSIZE=8192
 export CLICOLOR=1
 export PATH=$PATH:~/.local/bin:~/bin
