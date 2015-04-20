@@ -13,6 +13,9 @@ set -o vi
 
 alias homeshick="~/.homesick/repos/homeshick/bin/homeshick"
 alias la='ls --color=auto -la'
+alias lc='ls --color=always'
+alias grepc='grep --color=always'
+alias lessc='less -R'
 
 export EDITOR=vim
 export HISTSIZE=8192
