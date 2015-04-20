@@ -12,6 +12,7 @@ fi
 set -o vi
 
 alias homeshick="~/.homesick/repos/homeshick/bin/homeshick"
+alias dotfiles="cd ~/.homesick/repos/dotfiles/home"
 alias la='ls --color=auto -la'
 alias lc='ls --color=always'
 alias grepc='grep --color=always'

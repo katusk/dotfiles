@@ -1,8 +1,6 @@
 # .bash_profile
 
-# Get the aliases and functions
+# NOTE: all settings are moved to .bashrc
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
-
-# NOTE: all settings are moved to .bashrc
