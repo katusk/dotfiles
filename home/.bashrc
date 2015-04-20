@@ -11,11 +11,11 @@ fi
 # User specific environment, startup programs, aliases, and functions
 set -o vi
 
-alias homeshick="$HOME/.homesick/repos/homeshick/bin/homeshick"
+alias homeshick="~/.homesick/repos/homeshick/bin/homeshick"
 alias la='ls --color=auto -la'
 
 export EDITOR=vi
 export HISTSIZE=8192
 export CLICOLOR=1
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
-export MC_SKIN=$HOME/.mc/colors/solarized.ini
+export PATH=$PATH:~/.local/bin:~/bin
+export MC_SKIN=~/.mc/colors/solarized.ini
