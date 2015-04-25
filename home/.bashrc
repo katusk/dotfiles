@@ -18,6 +18,7 @@ alias lc='ls --color=always'
 alias grepc='grep --color=always'
 alias lessc='less -R'
 
+export PS1='[\u@\h \W]\$ '
 export EDITOR=vim
 export HISTSIZE=8192
 export CLICOLOR=1
