@@ -103,14 +103,14 @@ set nofoldenable       " Do not fold by default
 
 " History
 "-------------------------------------------------------------------------
-set history=1000       " Remember more commands and search history
-set undolevels=1000    " Use this many of levels of undo
 if has("win32") || has("win64")
-    set undodir=$USERPROFILE\vimfiles\undodir
+    set undodir=$USERPROFILE\.vim\undodir
 else
     set undodir=~/.vim/undodir
 endif
 set undofile           " Enable persistent undo
+set undolevels=1000    " Use this many of levels of undo
+set history=1000       " Remember more commands and search history
 
 " Enhanced completion
 "-------------------------------------------------------------------------
@@ -157,18 +157,23 @@ endif
 
 " Mappings               " NB No comment in same line as map command
 "=========================================================================
-set pastetoggle=<F2>     " Paste mode toggle not to get crazy
+set pastetoggle=<F2>     " Toggles making life easier
+nmap <F3> :NERDTreeToggle<CR>
+nmap <F4> :TagbarToggle<CR>
 let mapleader=","        " Change the mapleader from '\' to ','
                          " Quickly clear the search buffer
-nmap <silent> ,/ :nohls<CR>
+nmap <silent> <leader>/ :nohls<CR>
                          " Exiting Insert mode: <M-j> jk ;; ,,
-inoremap ,, <Esc>
+inoremap <leader>, <Esc>
                          " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
                          " Always jump to the next screen row
 nnoremap j gj
 nnoremap k gk
+                         " Cycle thru buffers
+nnoremap <silent> <leader>, :bnext<CR>
+nnoremap <silent> <leader>. :bprevious<CR>
 
 " Status line and other indicators
 "=========================================================================
@@ -201,8 +206,12 @@ let NERDTreeMouseMode=2
 let NERDTreeDirArrows=0
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI=1
-let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
 let NERDTreeShowBookmarks=1
+if has("win32") || has("win64")
+    let NERDTreeBookmarksFile=expand('$USERPROFILE\.vim\NERDTreeBookmarks')
+else
+    let NERDTreeBookmarksFile=expand('~/.vim/NERDTreeBookmarks')
+endif
 
 " Tagbar                                       majutsushi.github.io/tagbar
 "-------------------------------------------------------------------------
@@ -222,13 +231,15 @@ let g:easytags_async=1
 
 " CtrlP                                           kien.github.io/ctrlp.vim
 "-------------------------------------------------------------------------
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_show_hidden=0
 let g:ctrlp_max_files=8000
 let g:ctrlp_lazy_update=120
 
 " FSwitch                                github.com/derekwyatt/vim-fswitch
 "-------------------------------------------------------------------------
-nmap <silent> <Leader>a :FSHere<cr>
+nmap <silent> <leader>a :FSHere<cr>
 
 " Gitgutter                   github.com/airblade/vim-gitgutter/issues/164
 "-------------------------------------------------------------------------
@@ -247,7 +258,7 @@ let g:SuperTabDefaultCompletionType='context'
 let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
 let g:SuperTabRetainCompletionDuration='completion'
 let g:SuperTabClosePreviewOnPopupClose=1
-let g:SuperTabMappingForward=',<tab>'            " Tab is used by SnipMate
+let g:SuperTabMappingForward='<leader><tab>'     " Tab is used by SnipMate
 let g:SuperTabMappingBackward='<nop>'
 let g:SuperTabMappingTabLiteral='<nop>'
 let g:SuperTabLongestEnhanced=1
