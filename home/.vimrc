@@ -17,47 +17,47 @@ set cpo+=$              " Show '$' after the last character to be changed
 
 " Vundle for the easy bundling and updating of plugins
 "=========================================================================
-if has("win32") || has("win64")
-    set rtp+=$USERPROFILE\.vim\bundle\vundle\
-else
-    set rtp+=~/.vim/bundle/vundle/
-endif
-call vundle#rc()
 filetype off
+if has("win32") || has("win64")
+    set rtp+=$USERPROFILE\.vim\bundle\Vundle.vim\
+else
+    set rtp+=~/.vim/bundle/Vundle.vim/
+endif
 
 " Plugins managed by Vundle
 "-------------------------------------------------------------------------
-Bundle 'gmarik/vundle'
-" Dependencies                           " Required by xolox/vim-easytags
-Bundle 'xolox/vim-misc'
-                                         " Required by garbas/vim-snipmate
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+" Dependencies
+Plugin 'xolox/vim-misc'                  " Required by xolox/vim-easytags
+Plugin 'MarcWeber/vim-addon-mw-utils'    " Required by garbas/vim-snipmate
+Plugin 'tomtom/tlib_vim'
 " Color themes
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'jnurmine/Zenburn'
-Bundle 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jnurmine/Zenburn'
+Plugin 'tomasr/molokai'
 " Syntax highlighting
-Bundle 'http://bitbucket.org/alexcolson/kdb-vim.git'
-Bundle 'octol/vim-cpp-enhanced-highlight'
+Plugin 'http://bitbucket.org/alexcolson/kdb-vim.git'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 " Navigation
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
-Bundle 'kien/ctrlp.vim'
-Bundle 'derekwyatt/vim-fswitch'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
+Plugin 'derekwyatt/vim-fswitch'
 " Version control
-Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 " Code analysis and completion
-Bundle 'xolox/vim-easytags'
-Bundle 'scrooloose/syntastic'
-Bundle 'ervandew/supertab'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+Plugin 'xolox/vim-easytags'
+Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 " Editing
-Bundle 'nvie/vim-togglemouse'
-Bundle 'Raimondi/delimitMate'
+Plugin 'nvie/vim-togglemouse'
+Plugin 'Raimondi/delimitMate'
+call vundle#end()
 
 " Basic editing behaviour
 "=========================================================================
@@ -197,9 +197,12 @@ let g:airline#extensions#tabline#right_alt_sep=''
 
 " NERDTree                                                 :help NERD_tree
 "-------------------------------------------------------------------------
+let NERDTreeMouseMode=2
 let NERDTreeDirArrows=0
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI=1
+let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+let NERDTreeShowBookmarks=1
 
 " Tagbar                                       majutsushi.github.io/tagbar
 "-------------------------------------------------------------------------
