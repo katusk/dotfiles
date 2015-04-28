@@ -18,11 +18,7 @@ set cpo+=$              " Show '$' after the last character to be changed
 " Vundle for the easy bundling and updating of plugins
 "=========================================================================
 filetype off
-if has("win32") || has("win64")
-    set rtp+=$USERPROFILE\.vim\bundle\Vundle.vim\
-else
-    set rtp+=~/.vim/bundle/Vundle.vim/
-endif
+set rtp+=~/.vim/bundle/Vundle.vim/
 
 " Plugins managed by Vundle
 "-------------------------------------------------------------------------
@@ -103,14 +99,10 @@ set nofoldenable       " Do not fold by default
 
 " History
 "-------------------------------------------------------------------------
-if has("win32") || has("win64")
-    set undodir=$USERPROFILE\.vim\undodir
-else
-    set undodir=~/.vim/undodir
-endif
-set undofile           " Enable persistent undo
-set undolevels=1000    " Use this many of levels of undo
-set history=1000       " Remember more commands and search history
+set undodir=~/.vim/undodir " Persistent undo does not work unless exists
+set undofile               " Enable persistent undo
+set undolevels=1000        " Use this many of levels of undo
+set history=1000           " Remember more commands and search history
 
 " Enhanced completion
 "-------------------------------------------------------------------------
@@ -207,11 +199,7 @@ let NERDTreeDirArrows=0
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
-if has("win32") || has("win64")
-    let NERDTreeBookmarksFile=expand('$USERPROFILE\.vim\NERDTreeBookmarks')
-else
-    let NERDTreeBookmarksFile=expand('~/.vim/NERDTreeBookmarks')
-endif
+let NERDTreeBookmarksFile=expand('~/.vim/NERDTreeBookmarks')
 
 " Tagbar                                       majutsushi.github.io/tagbar
 "-------------------------------------------------------------------------
