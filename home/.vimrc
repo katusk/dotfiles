@@ -6,6 +6,7 @@ if has("win32") || has("win64")
     set backupdir=$TEMP,.        " Change backup directory too
     if has("gui_win32")
         cd $USERPROFILE          " Set starting directory
+        set clipboard+=unnamed   " Clipboard integration
     endif
 endif
 
@@ -55,12 +56,14 @@ Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 " Editing
+Bundle 'nvie/vim-togglemouse'
 Bundle 'Raimondi/delimitMate'
 
 " Basic editing behaviour
 "=========================================================================
 set mouse=a            " Enable mouse in all modes
 set ttymouse=xterm2    " Terminal type for mouse codes
+
 set hidden             " Buffer is hidden, not unloaded, when abandoned
 set number             " Always show line numbers
 set showmatch          " Set show matching parenthesis
