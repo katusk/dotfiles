@@ -219,8 +219,8 @@ let g:easytags_async=1
 
 " CtrlP                                           kien.github.io/ctrlp.vim
 "-------------------------------------------------------------------------
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd='CtrlPBuffer'
 let g:ctrlp_show_hidden=0
 let g:ctrlp_max_files=8000
 let g:ctrlp_lazy_update=120
