@@ -10,18 +10,16 @@ if has("win32") || has("win64")
     endif
 endif
 
-" Vi compatibility and related options
+" Initialization
 "=========================================================================
 set nocompatible        " Turn off Vi compatibility for all Vim features
 set cpo+=$              " Show '$' after the last character to be changed
-
-" Vundle for the easy bundling and updating of plugins
-"=========================================================================
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
+filetype off            " Ensure adding ftdetect scripts below always work
 
 " Plugins managed by Vundle
-"-------------------------------------------------------------------------
+"=========================================================================
+set rtp+=~/.vim/bundle/Vundle.vim/
+
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Dependencies
