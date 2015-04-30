@@ -82,6 +82,9 @@ set ignorecase         " Ignore case when searching. 'scs' overrides this
 set smartcase          " Ignore case if search pattern is all lowercase
 set incsearch          " Show search matches as you type
 
+set splitbelow         " More natural :split behaviour
+set splitright         " More natural :vsplit behaviour
+
 " Advanced editing behaviour
 "=========================================================================
 set nolist             " Disable whitespace visual aids. See 'lcs'
@@ -106,11 +109,12 @@ set history=1000           " Remember more commands and search history
 
 " Enhanced completion
 "-------------------------------------------------------------------------
-set wildmode=list:longest            " Enhanced command line completion
-set wildignore=*.o,*.obj,*~          " Stuff to ignore when tab completing
-set wildmenu                         " Scroll thru matches by C-n and C-p
-                                     " Insert mode completion enhancement
+set wildmode=list:longest         " Enhanced command line completion
+set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
+set wildmenu                      " Scroll thru matches by C-n and C-p
+                                  " Insert mode completion enhancement
 set completeopt=menuone,longest,preview
+set complete+=kspell              " Complete with dict if spell check on
 
 " File type plugins
 "-------------------------------------------------------------------------
@@ -239,6 +243,7 @@ endif
 " Syntastic           github.com/scrooloose/syntastic/wiki/Syntax-Checkers
 "-------------------------------------------------------------------------
 let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
 
 " SuperTab                                    github.com/ervandew/supertab
 "-------------------------------------------------------------------------
