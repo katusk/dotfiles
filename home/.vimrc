@@ -85,12 +85,19 @@ set splitright         " More natural :vsplit behaviour
 
 " Advanced editing behaviour
 "=========================================================================
+set noautoread         " Do not autoread files changed outside Vim
+set noautowrite        " Do not write changed contents on certain commands
+set noautowriteall     " Like 'noautowrite', but on more commands
+
 set nolist             " Disable whitespace visual aids. See 'lcs'
 set listchars=tab:>.,trail:.,extends:#,nbsp:~
 
 set scrolloff=5        " Min. lines to keep above and below cursor
 set sidescrolloff=10   " Min. cols to left and to right of cursor
 set sidescroll=1       " Min. cols to scroll horizontally
+
+set display+=lastline  " Always show last line instead of '@' signs
+set display+=uhex      " Show unprintable characters hexadecimal as <xx>
 
 " Folds
 "-------------------------------------------------------------------------
