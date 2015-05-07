@@ -26,6 +26,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'xolox/vim-misc'                  " Required by xolox/vim-easytags
 Plugin 'MarcWeber/vim-addon-mw-utils'    " Required by garbas/vim-snipmate
 Plugin 'tomtom/tlib_vim'
+" Interoperability
+Plugin 'nvie/vim-togglemouse'
+Plugin 'editorconfig/editorconfig-vim'
 " Color themes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
@@ -49,7 +52,6 @@ Plugin 'ervandew/supertab'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 " Editing
-Plugin 'nvie/vim-togglemouse'
 Plugin 'Raimondi/delimitMate'
 call vundle#end()
 
@@ -260,6 +262,10 @@ let g:SuperTabMappingForward='<leader><tab>'     " Tab is used by SnipMate
 let g:SuperTabMappingBackward='<nop>'
 let g:SuperTabMappingTabLiteral='<nop>'
 let g:SuperTabLongestEnhanced=1
+
+" EditorConfig            https://github.com/editorconfig/editorconfig-vim 
+"-------------------------------------------------------------------------
+let g:EditorConfig_exclude_patterns=['fugitive://.*']
 
 " Eclim                                 eclim.org/vim/code_completion.html
 "-------------------------------------------------------------------------
