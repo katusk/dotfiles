@@ -187,6 +187,7 @@ nnoremap <silent> <leader>. :bprevious<CR>
 nnoremap <leader>q :Autoformat<CR>
                          " Tabularize with ease
 nnoremap <leader>t :Tabularize /
+vnoremap <leader>t :Tabularize /
 
 " Status line and other indicators
 "=========================================================================
