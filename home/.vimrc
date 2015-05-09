@@ -52,10 +52,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+" Pretty printing
+Plugin 'Chiel92/vim-autoformat'
 " Editing
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'godlygeek/tabular'
 call vundle#end()
 
 " Basic editing behaviour
@@ -180,6 +183,10 @@ nnoremap k gk
                          " Cycle thru buffers
 nnoremap <silent> <leader>, :bnext<CR>
 nnoremap <silent> <leader>. :bprevious<CR>
+                         " Autoformat, also see gq{motion}
+nnoremap <leader>q :Autoformat<CR>
+                         " Tabularize with ease
+nnoremap <leader>t :Tabularize /
 
 " Status line and other indicators
 "=========================================================================
