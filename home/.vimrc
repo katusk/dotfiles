@@ -29,6 +29,7 @@ Plugin 'tomtom/tlib_vim'
 " Interoperability
 Plugin 'nvie/vim-togglemouse'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tpope/vim-repeat'
 " Color themes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
@@ -53,6 +54,8 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 " Editing
 Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-surround'
+Plugin 'tomtom/tcomment_vim'
 call vundle#end()
 
 " Basic editing behaviour
@@ -263,7 +266,7 @@ let g:SuperTabMappingBackward='<nop>'
 let g:SuperTabMappingTabLiteral='<nop>'
 let g:SuperTabLongestEnhanced=1
 
-" EditorConfig            https://github.com/editorconfig/editorconfig-vim 
+" EditorConfig            https://github.com/editorconfig/editorconfig-vim
 "-------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns=['fugitive://.*']
 
