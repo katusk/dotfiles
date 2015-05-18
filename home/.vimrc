@@ -188,6 +188,9 @@ nnoremap <leader>q :Autoformat<CR>
                          " Tabularize with ease
 nnoremap <leader>t :Tabularize /
 vnoremap <leader>t :Tabularize /
+                         " Do not jump to next occurrence on *
+map <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
+map <silent> g* :let @/ = expand('<cword>')\|set hlsearch<C-M>
 
 " Status line and other indicators
 "=========================================================================
