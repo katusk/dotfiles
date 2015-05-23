@@ -11,6 +11,7 @@ fi
 # User specific environment, startup programs, aliases, and functions
 set -o vi
 
+if [ -e /usr/bin/vimx ]; then alias vim='/usr/bin/vimx'; fi
 alias homeshick="~/.homesick/repos/homeshick/bin/homeshick"
 alias dotfiles="cd ~/.homesick/repos/dotfiles/home"
 alias la='ls --color=auto -la'
