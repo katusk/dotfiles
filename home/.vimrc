@@ -34,6 +34,7 @@ Plugin 'nvie/vim-togglemouse'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'jpalardy/vim-slime'
+Plugin 'richsoni/vim-ecliptic'
 " Color themes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
