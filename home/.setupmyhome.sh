@@ -13,6 +13,7 @@ git_pull_or_clone git://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vi
 wget -nc -P ~/.mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-skin/master/solarized.ini
 wget -nc -P ~ https://raw.githubusercontent.com/willnorris/dotfiles/master/lynx/.lynx.lss
 mkdir -p ~/.vim/undodir
+git_pull_or_clone git://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 
 # Reminders
 set +x
@@ -21,3 +22,4 @@ echo ". ~/.bashrc"
 echo "homeshick link"
 echo "vim +PluginInstall +qall"
 echo "lynx http://ethanschoonover.com/solarized"
+echo "yum install xsel"
