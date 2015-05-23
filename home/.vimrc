@@ -30,6 +30,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'nvie/vim-togglemouse'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-repeat'
+Plugin 'jpalardy/vim-slime'
 " Color themes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
@@ -277,9 +278,17 @@ let g:SuperTabMappingBackward='<nop>'
 let g:SuperTabMappingTabLiteral='<nop>'
 let g:SuperTabLongestEnhanced=1
 
-" EditorConfig            https://github.com/editorconfig/editorconfig-vim
+" EditorConfig                    github.com/editorconfig/editorconfig-vim
 "-------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns=['fugitive://.*']
+
+" Vim-Slime                                  github.com/jpalardy/vim-slime
+"-------------------------------------------------------------------------
+let g:slime_target="tmux"
+let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
+let g:slime_python_ipython=1
+nmap <Plug>NoSlimeParagraphSend <Plug>SlimeParagraphSend
+nmap <c-c><c-c> <Plug>SlimeLineSend
 
 " Eclim                                 eclim.org/vim/code_completion.html
 "-------------------------------------------------------------------------
