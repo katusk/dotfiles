@@ -6,14 +6,14 @@ function git_pull_or_clone {
     if(! (cd $2 && git pull)); then git clone $1 $2; fi
 }
 
-# Install homeshick, my dotfiles, vundle, mc skin, lynx colors, ...
+# Install homeshick, my dotfiles, vundle, etc.
 git_pull_or_clone git://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
 git_pull_or_clone git://github.com/katusk/dotfiles.git ~/.homesick/repos/dotfiles
 git_pull_or_clone git://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git_pull_or_clone git://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 wget -nc -P ~/.mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-skin/master/solarized.ini
 wget -nc -P ~ https://raw.githubusercontent.com/willnorris/dotfiles/master/lynx/.lynx.lss
 mkdir -p ~/.vim/undodir
-git_pull_or_clone git://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 
 # Reminders
 set +x
@@ -22,4 +22,4 @@ echo ". ~/.bashrc"
 echo "homeshick link"
 echo "vim +PluginInstall +qall"
 echo "lynx http://ethanschoonover.com/solarized"
-echo "yum install xsel"
+echo "xsel --version"

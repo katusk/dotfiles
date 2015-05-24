@@ -226,7 +226,7 @@ let g:airline#extensions#tabline#right_alt_sep=''
 "-------------------------------------------------------------------------
 let NERDTreeMouseMode=2
 let NERDTreeDirArrows=0
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
 let NERDTreeBookmarksFile=expand('~/.vim/NERDTreeBookmarks')
