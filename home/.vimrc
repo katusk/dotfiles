@@ -77,6 +77,10 @@ set showmatch          " Set show matching parenthesis
 set wrap               " Enable long line wrapping
 set linebreak          " Wrap long lines at 'breakat'; only if 'nolist'
 
+set textwidth=80       " A longer line will be broken after white space
+set fo=croql           " Options for automatic formatting, see fo-table
+set wrapmargin=0       " Wrapping from the right window border disabled
+
 set tabstop=4          " A tab is N spaces --- tedlogan.com/techblog3.html
 set expandtab          " Always expand <Tab> to spaces
 set shiftwidth=4       " N spaces to use for autoindenting
