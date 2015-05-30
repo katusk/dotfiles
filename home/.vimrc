@@ -174,11 +174,19 @@ else
     set background=dark
 endif
 
+" Status line and other indicators
+"=========================================================================
+set laststatus=2         " Always show the status line
+set ruler                " Show the cursor position
+set showmode             " Show the current mode
+set title                " Show the filename in the window titlebar
+set showcmd              " Show the (partial) command as it is being typed
+set colorcolumn=80       " Show the print margin
+set cursorline           " Highlight the screen line of the cursor
+
 " Mappings               " NB No comment in same line as map command
 "=========================================================================
-set pastetoggle=<F2>     " Toggles making life easier
-nmap <F3> :NERDTreeToggle<CR>
-nmap <F4> :TagbarToggle<CR>
+set pastetoggle=<F2>     " Disable format options when pasting for sanity
 let mapleader=","        " Change the mapleader from '\' to ','
                          " Quickly clear the search buffer
 nmap <silent> <leader>/ :nohls<CR>
@@ -195,11 +203,6 @@ nnoremap <silent> <leader>, :bnext<CR>
 nnoremap <silent> <leader>. :bprevious<CR>
 nnoremap <silent> <leader># :b#<CR>
 nnoremap <leader>b :ls<CR>:b<Space>
-                         " Autoformat, also see gq{motion}
-nnoremap <leader>q :Autoformat<CR>
-                         " Tabularize with ease
-nnoremap <leader>t :Tabularize /
-vnoremap <leader>t :Tabularize /
                          " Do not jump to next occurrence on *
 map <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hls<CR>
 map <silent> g* :let @/ = expand('<cword>')\|set hls<CR>
@@ -208,15 +211,26 @@ nmap <silent> <leader>r :set relativenumber!<CR>
                          " Explore directory of current file
 nmap <leader>e :Explore<CR>
 
-" Status line and other indicators
+" Plugin mappings        " NB No comment in same line as map command
 "=========================================================================
-set laststatus=2         " Always show the status line
-set ruler                " Show the cursor position
-set showmode             " Show the current mode
-set title                " Show the filename in the window titlebar
-set showcmd              " Show the (partial) command as it is being typed
-set colorcolumn=80       " Show the print margin
-set cursorline           " Highlight the screen line of the cursor
+nmap <F3> :NERDTreeToggle<CR>
+nmap <F4> :TagbarToggle<CR>
+                         " Autoformat. Also see gq{motion}
+nnoremap <leader>q :Autoformat<CR>
+                         " Tabularize with ease
+nnoremap <leader>t :Tabularize /
+vnoremap <leader>t :Tabularize /
+                         " FSwitch. See github.com/derekwyatt/vim-fswitch
+nmap <silent> <leader>a :FSHere<CR>
+                         " SuperTab. Note: Tab is used by SnipMate
+let g:SuperTabMappingForward='<leader><tab>'
+let g:SuperTabMappingBackward='<nop>'
+let g:SuperTabMappingTabLiteral='<nop>'
+                         " CtrlP
+let g:ctrlp_map='<c-p>'
+                         " Vim-Slime
+nmap <Plug>NoSlimeParagraphSend <Plug>SlimeParagraphSend
+nmap <c-c><c-c> <Plug>SlimeLineSend
 
 " Plugin settings
 "=========================================================================
@@ -260,15 +274,10 @@ let g:easytags_async=1
 
 " CtrlP                                           kien.github.io/ctrlp.vim
 "-------------------------------------------------------------------------
-let g:ctrlp_map='<c-p>'
-let g:ctrlp_cmd='CtrlPBuffer'
-let g:ctrlp_show_hidden=0
+let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_show_hidden=1
 let g:ctrlp_max_files=8000
 let g:ctrlp_lazy_update=120
-
-" FSwitch                                github.com/derekwyatt/vim-fswitch
-"-------------------------------------------------------------------------
-nmap <silent> <leader>a :FSHere<cr>
 
 " Gitgutter                   github.com/airblade/vim-gitgutter/issues/164
 "-------------------------------------------------------------------------
@@ -288,9 +297,6 @@ let g:SuperTabDefaultCompletionType='context'
 let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
 let g:SuperTabRetainCompletionDuration='completion'
 let g:SuperTabClosePreviewOnPopupClose=1
-let g:SuperTabMappingForward='<leader><tab>'     " Tab is used by SnipMate
-let g:SuperTabMappingBackward='<nop>'
-let g:SuperTabMappingTabLiteral='<nop>'
 let g:SuperTabLongestEnhanced=1
 
 " EditorConfig                    github.com/editorconfig/editorconfig-vim
@@ -302,8 +308,6 @@ let g:EditorConfig_exclude_patterns=['fugitive://.*']
 let g:slime_target="tmux"
 let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 let g:slime_python_ipython=1
-nmap <Plug>NoSlimeParagraphSend <Plug>SlimeParagraphSend
-nmap <c-c><c-c> <Plug>SlimeLineSend
 
 " Eclim                                 eclim.org/vim/code_completion.html
 "-------------------------------------------------------------------------
