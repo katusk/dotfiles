@@ -185,9 +185,11 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
                          " Always jump to the next screen row
 nnoremap j gj
 nnoremap k gk
-                         " Cycle thru buffers
+                         " Cycle thru buffers, easier buffer switching
 nnoremap <silent> <leader>, :bnext<CR>
 nnoremap <silent> <leader>. :bprevious<CR>
+nnoremap <silent> <leader># :b#<CR>
+nnoremap <leader>b :ls<CR>:b<Space>
                          " Autoformat, also see gq{motion}
 nnoremap <leader>q :Autoformat<CR>
                          " Tabularize with ease
