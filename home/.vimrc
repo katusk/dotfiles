@@ -181,8 +181,8 @@ nmap <silent> <leader>/ :nohls<CR>
                          " Exiting Insert mode: <M-j> jk ;; ,,
 inoremap <leader>, <Esc>
                          " Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader><S-E> :e $MYVIMRC<CR>
+nmap <silent> <leader><S-S> :so $MYVIMRC<CR>
                          " Always jump to the next screen row
 nnoremap j gj
 nnoremap k gk
@@ -197,12 +197,12 @@ nnoremap <leader>q :Autoformat<CR>
 nnoremap <leader>t :Tabularize /
 vnoremap <leader>t :Tabularize /
                          " Do not jump to next occurrence on *
-map <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
-map <silent> g* :let @/ = expand('<cword>')\|set hlsearch<C-M>
+map <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hls<CR>
+map <silent> g* :let @/ = expand('<cword>')\|set hls<CR>
                          " Relative line number toggle
-nmap <silent> <leader>r :se rnu!<CR>
+nmap <silent> <leader>r :set relativenumber!<CR>
                          " Explore directory of current file
-nmap <leader>ee :Explore<CR>
+nmap <leader>e :Explore<CR>
 
 " Status line and other indicators
 "=========================================================================
