@@ -198,6 +198,8 @@ vnoremap <leader>t :Tabularize /
                          " Do not jump to next occurrence on *
 map <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 map <silent> g* :let @/ = expand('<cword>')\|set hlsearch<C-M>
+                         " Relative line number toggle
+nmap <silent> <leader>r :se rnu!<CR>
 
 " Status line and other indicators
 "=========================================================================
