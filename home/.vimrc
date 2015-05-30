@@ -127,8 +127,9 @@ set history=1000           " Remember more commands and search history
 
 " Enhanced completion
 "-------------------------------------------------------------------------
-set wildmode=list:longest         " Enhanced command line completion
+set wildmode=longest,full         " Enhanced command line completion
 set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
+set wildignorecase                " When completing file and dir names
 set wildmenu                      " Scroll thru matches by C-n and C-p
                                   " Insert mode completion enhancement
 set completeopt=menuone,longest,preview
