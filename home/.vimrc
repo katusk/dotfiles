@@ -139,6 +139,10 @@ set wildmenu                      " Scroll thru matches by C-n and C-p
 set completeopt=menuone,longest,preview
 set complete+=kspell              " Complete with dict if spell check on
 
+" Tags and special searches                              tags-and-searches
+"-------------------------------------------------------------------------
+set tags=./tags;
+
 " File type plugins
 "-------------------------------------------------------------------------
 filetype plugin indent on
@@ -263,7 +267,6 @@ let g:tagbar_compact=1
 
 " Easytags                               peterodding.com/code/vim/easytags
 "-------------------------------------------------------------------------
-set tags=./tags;
 let g:easytags_dynamic_files=2
 let g:easytags_include_members=1
 let g:easytags_events=['BufReadPost', 'BufWritePost']
