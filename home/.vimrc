@@ -150,6 +150,16 @@ autocmd FileType make set noexpandtab
 autocmd FileType gitconfig set noexpandtab
 autocmd FileType python set expandtab
 
+" Status line and other indicators
+"=========================================================================
+set laststatus=2         " Always show the status line
+set ruler                " Show the cursor position
+set showmode             " Show the current mode
+set title                " Show the filename in the window titlebar
+set showcmd              " Show the (partial) command as it is being typed
+set colorcolumn=80       " Show the print margin
+set cursorline           " Highlight the screen line of the cursor
+
 " Syntax highlighting, (G)UI related settings
 "=========================================================================
 " set t_Co=16        " Putty, Connection > Data, term-type: putty-256color
@@ -177,16 +187,6 @@ if has("gui_running")
 else
     set background=dark
 endif
-
-" Status line and other indicators
-"=========================================================================
-set laststatus=2         " Always show the status line
-set ruler                " Show the cursor position
-set showmode             " Show the current mode
-set title                " Show the filename in the window titlebar
-set showcmd              " Show the (partial) command as it is being typed
-set colorcolumn=80       " Show the print margin
-set cursorline           " Highlight the screen line of the cursor
 
 " Mappings               " NB No comment in same line as map command
 "=========================================================================
