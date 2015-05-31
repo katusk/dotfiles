@@ -68,6 +68,7 @@ call vundle#end()
 
 " Basic editing behaviour
 "=========================================================================
+set timeoutlen=500     " Waits this long between keys in key sequence
 set mouse=a            " Enable mouse in all modes
 set ttymouse=xterm2    " Terminal type for mouse codes
 
@@ -78,7 +79,7 @@ set wrap               " Enable long line wrapping
 set linebreak          " Wrap long lines at 'breakat'; only if 'nolist'
 
 set textwidth=80       " A longer line will be broken after white space
-set fo=croql           " Options for automatic formatting, see fo-table
+set fo=croqln          " Options for automatic formatting, see fo-table
 set wrapmargin=0       " Wrapping from the right window border disabled
 
 set tabstop=4          " A tab is N spaces --- tedlogan.com/techblog3.html
@@ -146,11 +147,15 @@ set complete+=kspell              " Complete with dict if spell check on
 set tags=./tags;
 
 " File type plugins
-"-------------------------------------------------------------------------
+"=========================================================================
 filetype plugin indent on
 autocmd FileType make set noexpandtab
 autocmd FileType gitconfig set noexpandtab
 autocmd FileType python set expandtab
+
+" Other options
+"=========================================================================
+set ssop+=resize,winpos  " Changes the effect of :mksession
 
 " Status line and other indicators
 "=========================================================================
