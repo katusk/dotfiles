@@ -215,7 +215,7 @@ map <silent> g* :let @/ = expand('<cword>')\|set hls<CR>
                          " Relative line number toggle
 nmap <silent> <leader>r :set relativenumber!<CR>
                          " Explore directory of current file
-nmap <leader>e :Explore<CR>
+nmap <leader>e :Explore!<CR>
 
 " Plugin mappings        " NB No comment in same line as map command
 "=========================================================================
