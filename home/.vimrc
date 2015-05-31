@@ -82,14 +82,14 @@ set fo=croql           " Options for automatic formatting, see fo-table
 set wrapmargin=0       " Wrapping from the right window border disabled
 
 set tabstop=4          " A tab is N spaces --- tedlogan.com/techblog3.html
-set expandtab          " Always expand <Tab> to spaces
+set expandtab          " Always expand <tab> to spaces
 set shiftwidth=4       " N spaces to use for autoindenting
 set softtabstop=4      " Tab is N spaces in Insert mode
 set backspace=2        " Allow i_backspacing over indent, eol, and start
 set autoindent         " Always set autoindenting on
 set copyindent         " Copy the previous indentation on autoindenting
 set smartindent        " For C-like programs. Also see :h C-indenting
-set shiftround         " Use multiples of 'sw' upon '<' and '>'
+set shiftround         " Use multiples of 'sw' upon < and >
 set smarttab           " Insert tabs at ^ according to'sw', not 'ts'
 
 set hlsearch           " Highlight search terms. Switch off with :nohls
@@ -113,7 +113,7 @@ set scrolloff=5        " Min. lines to keep above and below cursor
 set sidescrolloff=10   " Min. cols to left and to right of cursor
 set sidescroll=1       " Min. cols to scroll horizontally
 
-set display+=lastline  " Always show last line instead of '@' signs
+set display+=lastline  " Always show last line instead of @ signs
 set display+=uhex      " Show unprintable characters hexadecimal as <xx>
 
 " Folds
@@ -131,6 +131,8 @@ set history=1000           " Remember more commands and search history
 
 " Enhanced completion
 "-------------------------------------------------------------------------
+set wildchar=<tab>                " See cmdline-completion
+set wildcharm=<c-z>               " Like wildchar, but inside a macro
 set wildmode=longest:full,full    " Enhanced command line completion
 set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 set wildignorecase                " When completing file and dir names
@@ -164,10 +166,10 @@ set cursorline           " Highlight the screen line of the cursor
 "=========================================================================
 " set t_Co=16        " Putty, Connection > Data, term-type: putty-256color
 if &t_Co >= 16 || has("gui_running")
-    let g:solarized_contrast="high"        " Default is 'normal'
-    let g:solarized_diffmode="high"        " Default is 'normal'
-    let g:solarized_hitrail=1              " Default is '0'
-    colorscheme solarized                  " Or try 'zenburn'
+    let g:solarized_contrast="high"        " Default is normal
+    let g:solarized_diffmode="high"        " Default is normal
+    let g:solarized_hitrail=1              " Default is 0
+    colorscheme solarized                  " Or try zenburn
 endif
 if &t_Co > 2 || has("gui_running")
     syntax on
@@ -182,7 +184,7 @@ if has("gui_running")
     if has("gui_gtk2")
         set guifont=Inconsolata\ Medium\ 12
     elseif has("gui_win32")
-        set guifont=Consolas:h12:cDEFAULT  " Or 'Inconsolata:h12:b'
+        set guifont=Consolas:h12:cDEFAULT  " Or Inconsolata:h12:b
     endif
 else
     set background=dark
@@ -191,7 +193,7 @@ endif
 " Mappings               " NB No comment in same line as map command
 "=========================================================================
 set pastetoggle=<F2>     " Disable format options when pasting for sanity
-let mapleader=","        " Change the mapleader from '\' to ','
+let mapleader=","        " Change the mapleader from \ to ,
                          " Quickly clear the search buffer
 nmap <silent> <leader>/ :nohls<CR>
                          " Exiting Insert mode: <M-j> jk ;; ,,
@@ -206,7 +208,7 @@ nnoremap k gk
 nnoremap <silent> <leader>, :bnext<CR>
 nnoremap <silent> <leader>. :bprevious<CR>
 nnoremap <silent> <leader># :b#<CR>
-nnoremap <leader>b :ls<CR>:b<Space>
+nnoremap <leader>b :ls<CR>:b<space>
                          " Do not jump to next occurrence on *
 map <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hls<CR>
 map <silent> g* :let @/ = expand('<cword>')\|set hls<CR>
@@ -226,7 +228,7 @@ nnoremap <leader>t :Tabularize /
 vnoremap <leader>t :Tabularize /
                          " FSwitch. See github.com/derekwyatt/vim-fswitch
 nmap <silent> <leader>a :FSHere<CR>
-                         " SuperTab. Note: Tab is used by SnipMate
+                         " SuperTab. Note: tab is used by SnipMate
 let g:SuperTabMappingForward='<leader><tab>'
 let g:SuperTabMappingBackward='<nop>'
 let g:SuperTabMappingTabLiteral='<nop>'
