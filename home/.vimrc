@@ -167,15 +167,10 @@ set showcmd              " Show the (partial) command as it is being typed
 set colorcolumn=80       " Show the print margin
 set cursorline           " Highlight the screen line of the cursor
 
-" Syntax highlighting, (G)UI related settings
+" Colors and GUI related settings
 "=========================================================================
-" set t_Co=16        " Putty, Connection > Data, term-type: putty-256color
-if &t_Co >= 16 || has("gui_running")
-    let g:solarized_contrast="high"        " Default is normal
-    let g:solarized_diffmode="high"        " Default is normal
-    let g:solarized_hitrail=1              " Default is 0
-    colorscheme solarized                  " Or try zenburn
-endif
+" If colors via Putty funny, set term-type to 'putty-256color' in Putty.
+" If still color issues, open a new line below containing 'set t_Co=16'.
 if &t_Co > 2 || has("gui_running")
     syntax on
 endif
@@ -193,6 +188,15 @@ if has("gui_running")
     endif
 else
     set background=dark
+endif
+
+" Color scheme specific settings
+"-------------------------------------------------------------------------
+if &t_Co >= 16 || has("gui_running")
+    let g:solarized_contrast="high"        " Default is normal
+    let g:solarized_diffmode="high"        " Default is normal
+    let g:solarized_hitrail=1              " Default is 0
+    colorscheme solarized                  " Or try zenburn
 endif
 
 " Mappings               " NB No comment in same line as map command
