@@ -68,7 +68,7 @@ call vundle#end()
 
 " Basic editing behaviour
 "=========================================================================
-set timeoutlen=500     " Waits this long between keys in key sequence
+set timeoutlen=700     " Waits this long between keys in key sequence
 set mouse=a            " Enable mouse in all modes
 set ttymouse=xterm2    " Terminal type for mouse codes
 
@@ -222,7 +222,7 @@ nnoremap <leader>b :ls<CR>:b<space>
 map <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hls<CR>
 map <silent> g* :let @/ = expand('<cword>')\|set hls<CR>
                          " Relative line number toggle
-nmap <silent> <leader>r :set relativenumber!<CR>
+nmap <silent> <leader>r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
                          " Explore directory of current file
 nmap <leader>e :Explore!<CR>
 
