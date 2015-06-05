@@ -6,11 +6,11 @@ if has("win32") || has("win64")
     set backupdir=$TEMP,.        " Change backup directory too
     if has("gui_win32")
         cd $USERPROFILE          " Set starting directory
-        set clipboard+=unnamed   " Clipboard integration in Windows
+        set clipboard^=unnamed   " Clipboard integration in Windows
     endif
 endif
 if has('unnamedplus')
-    set clipboard+=unnamedplus   " Clipboard integration with X11
+    set clipboard^=unnamedplus   " Clipboard integration with X11
 endif
 
 " Initialization
