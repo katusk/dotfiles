@@ -15,11 +15,14 @@ wget -nc -P ~/.mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-sk
 wget -nc -P ~ https://raw.githubusercontent.com/willnorris/dotfiles/master/lynx/.lynx.lss
 mkdir -p ~/.vim/undodir
 
+# Set up environment
+~/.homesick/repos/homeshick/bin/homeshick link
+vim +PluginInstall +qall
+if [ ! -x `type -p xsel` ]; then su -c "yum install xsel"; fi
+
 # Reminders
 set +x
 echo "*** Do not forget the following ***"
 echo ". ~/.bashrc"
-echo "homeshick link"
-echo "vim +PluginInstall +qall"
+echo "lynx https://github.com/tmux-plugins/tpm#installing-plugins"
 echo "lynx http://ethanschoonover.com/solarized"
-echo "xsel --version"
