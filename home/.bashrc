@@ -10,6 +10,7 @@ fi
 
 # User specific environment, startup programs, aliases, and functions
 set -o vi
+shopt -s histappend
 
 if [ -x `type -p vimx` ]; then alias vim='vimx'; fi
 alias homeshick="~/.homesick/repos/homeshick/bin/homeshick"
@@ -22,6 +23,8 @@ alias lessc='less -R'
 export PS1='[\u@\h \W]\$ '
 export EDITOR=vim
 export HISTSIZE=8192
+export HISTFILESIZE=65536
+export HISTCONTROL=ignoredups
 export CLICOLOR=1
 export PATH=$PATH:~/.local/bin:~/bin
 export MC_SKIN=~/.mc/colors/solarized.ini
