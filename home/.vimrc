@@ -42,6 +42,7 @@ Plugin 'tomasr/molokai'
 " Syntax highlighting
 Plugin 'http://bitbucket.org/alexcolson/kdb-vim.git'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'tmux-plugins/vim-tmux'
 " Navigation
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
