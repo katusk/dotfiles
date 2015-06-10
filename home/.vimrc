@@ -168,27 +168,13 @@ set showcmd              " Show the (partial) command as it is being typed
 set colorcolumn=80       " Show the print margin
 set cursorline           " Highlight the screen line of the cursor
 
-" Colors and GUI related settings
+" Colors
 "=========================================================================
 " If colors via Putty funny, set term-type to 'putty-256color' in Putty.
 " If still color issues, open a new line below containing 'set t_Co=16'.
 if &t_Co > 2 || has("gui_running")
     syntax on
-endif
-if has("gui_running")
-    set lines=30 columns=90
-    set background=light
-    set guicursor+=a:blinkon0              " Disable cursor blinking
-    set guioptions-=T                      " Turn off gVim toolbar
-    set guioptions+=rRlLb
-    set guioptions-=rRlLb                  " Remove all scroll bars
-    if has("gui_gtk2")
-        set guifont=Inconsolata\ Medium\ 12
-    elseif has("gui_win32")
-        set guifont=Consolas:h12:cDEFAULT  " Or Inconsolata:h12:b
-    endif
-else
-    set background=dark
+    set background=dark                    " Overwritten in gvimrc
 endif
 
 " Color scheme specific settings
