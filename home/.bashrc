@@ -14,7 +14,7 @@ shopt -s histappend
 
 function tmux_list_vi_binds {
     tmux -f $1 start\; new -d\; lsk\; lsk -t vi-copy\; \
-    lsk -t vi-edit\; lsk -t vi-choice\; kill-server | less
+    lsk -t vi-edit\; lsk -t vi-choice\; kill-session | less
 }
 
 alias homeshick="~/.homesick/repos/homeshick/bin/homeshick"
