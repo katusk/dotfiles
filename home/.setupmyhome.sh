@@ -18,11 +18,14 @@ mkdir -p ~/.vim/undodir
 # Set up environment
 ~/.homesick/repos/homeshick/bin/homeshick link
 vim +PluginInstall +qall
+tmux start \; new -d \;                                       \
+    run "~/.tmux/plugins/tpm/scripts/install_plugins.sh"   \; \
+    run "~/.tmux/plugins/tpm/scripts/update_plugin.sh all" \; \
+    kill-session
 
 # Reminders
 set +x
 echo "*** Do not forget the following ***"
 if [ ! -x `type -p xsel` ]; then echo "# xsel might be needed to be installed"; fi
 echo ". ~/.bashrc"
-echo "lynx https://github.com/tmux-plugins/tpm#installing-plugins"
 echo "lynx http://ethanschoonover.com/solarized"
