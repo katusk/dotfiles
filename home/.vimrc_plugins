@@ -1,0 +1,149 @@
+" Plugins managed by Vundle
+"=========================================================================
+set rtp+=~/.vim/bundle/Vundle.vim/
+
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+" Dependencies
+Plugin 'xolox/vim-misc'                  " Required by xolox/vim-easytags
+Plugin 'MarcWeber/vim-addon-mw-utils'    " Required by garbas/vim-snipmate
+Plugin 'tomtom/tlib_vim'
+" Interoperability
+Plugin 'nvie/vim-togglemouse'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'jpalardy/vim-slime'
+Plugin 'richsoni/vim-ecliptic'
+" Color themes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jnurmine/Zenburn'
+Plugin 'tomasr/molokai'
+" Syntax highlighting
+Plugin 'http://bitbucket.org/alexcolson/kdb-vim.git'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'tmux-plugins/vim-tmux'
+" Navigation
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
+Plugin 'derekwyatt/vim-fswitch'
+" Version control
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+" Code analysis and completion
+Plugin 'xolox/vim-easytags'
+Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+" Pretty printing
+Plugin 'Chiel92/vim-autoformat'
+" Editing
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-surround'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'godlygeek/tabular'
+call vundle#end()
+
+" Plugin mappings        " NB No comment in same line as map command
+"=========================================================================
+nmap <F3> :NERDTreeToggle<CR>
+nmap <F4> :TagbarToggle<CR>
+                         " Autoformat. Also see gq{motion}
+nnoremap <leader>q :Autoformat<CR>
+                         " Tabularize with ease
+nnoremap <leader>t :Tabularize /
+vnoremap <leader>t :Tabularize /
+                         " FSwitch. See github.com/derekwyatt/vim-fswitch
+nmap <silent> <leader>a :FSHere<CR>
+                         " SuperTab. Note: tab is used by SnipMate
+let g:SuperTabMappingForward='<leader><tab>'
+let g:SuperTabMappingBackward='<nop>'
+let g:SuperTabMappingTabLiteral='<nop>'
+                         " CtrlP
+let g:ctrlp_map='<c-p>'
+                         " Vim-Slime
+nmap <Plug>NoSlimeParagraphSend <Plug>SlimeParagraphSend
+nmap <c-c><c-c> <Plug>SlimeLineSend
+
+" Plugin settings
+"=========================================================================
+
+" Airline                                                    :help airline
+"-------------------------------------------------------------------------
+let g:airline_left_sep=''
+let g:airline_left_alt_sep=''
+let g:airline_right_sep=''
+let g:airline_right_alt_sep=''
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#left_sep=''
+let g:airline#extensions#tabline#left_alt_sep=''
+let g:airline#extensions#tabline#right_sep=''
+let g:airline#extensions#tabline#right_alt_sep=''
+
+" NERDTree                                                 :help NERD_tree
+"-------------------------------------------------------------------------
+let NERDTreeMouseMode=2
+let NERDTreeDirArrows=0
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeShowBookmarks=1
+let NERDTreeBookmarksFile=expand('~/.vim/NERDTreeBookmarks')
+
+" Tagbar                                       majutsushi.github.io/tagbar
+"-------------------------------------------------------------------------
+let g:tagbar_iconchars=['+', '-']
+let g:tagbar_compact=1
+
+" Easytags                               peterodding.com/code/vim/easytags
+"-------------------------------------------------------------------------
+let g:easytags_dynamic_files=2
+let g:easytags_include_members=1
+let g:easytags_events=['BufReadPost', 'BufWritePost']
+let g:easytags_syntax_keyword='always'
+let g:easytags_auto_update=1
+let g:easytags_auto_highlight=1
+let g:easytags_async=1
+
+" CtrlP                                           kien.github.io/ctrlp.vim
+"-------------------------------------------------------------------------
+let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_show_hidden=1
+let g:ctrlp_max_files=8000
+let g:ctrlp_lazy_update=120
+
+" Gitgutter                   github.com/airblade/vim-gitgutter/issues/164
+"-------------------------------------------------------------------------
+highlight clear SignColumn                       " theme color is strange
+if exists("*gitgutter#highlight#define_highlights")
+    call gitgutter#highlight#define_highlights() " reload gitgutter color
+endif
+
+" Syntastic           github.com/scrooloose/syntastic/wiki/Syntax-Checkers
+"-------------------------------------------------------------------------
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+
+" SuperTab                                    github.com/ervandew/supertab
+"-------------------------------------------------------------------------
+let g:SuperTabDefaultCompletionType='context'
+let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
+let g:SuperTabRetainCompletionDuration='completion'
+let g:SuperTabClosePreviewOnPopupClose=1
+let g:SuperTabLongestEnhanced=1
+
+" EditorConfig                    github.com/editorconfig/editorconfig-vim
+"-------------------------------------------------------------------------
+let g:EditorConfig_exclude_patterns=['fugitive://.*']
+
+" Vim-Slime                                  github.com/jpalardy/vim-slime
+"-------------------------------------------------------------------------
+let g:slime_target="tmux"
+let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
+let g:slime_python_ipython=1
+
+" Eclim                                 eclim.org/vim/code_completion.html
+"-------------------------------------------------------------------------
+let g:EclimCompletionMethod='omnifunc'
+
