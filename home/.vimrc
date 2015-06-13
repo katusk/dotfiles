@@ -97,7 +97,7 @@ set wildchar=<tab>                " See cmdline-completion
 set wildcharm=<c-z>               " Like wildchar, but inside a macro
 set wildmode=longest:full,full    " Enhanced command line completion
 set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
-set wildignorecase                " When completing file and dir names
+sil! set wildignorecase           " When completing file and dir names
 set wildmenu                      " Scroll thru matches by C-n and C-p
                                   " Insert mode completion enhancement
 set completeopt=menuone,longest,preview
@@ -143,7 +143,7 @@ if &t_Co >= 16 || has("gui_running")
     let g:solarized_contrast="high"        " Default is normal
     let g:solarized_diffmode="high"        " Default is normal
     let g:solarized_hitrail=1              " Default is 0
-    silent! colorscheme solarized          " Or try zenburn
+    sil! colorscheme solarized             " Or try zenburn
 endif
 
 " Mappings               " NB No comment in same line as map command
