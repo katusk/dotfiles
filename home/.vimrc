@@ -143,7 +143,7 @@ if &t_Co >= 16 || has("gui_running")
     let g:solarized_contrast="high"        " Default is normal
     let g:solarized_diffmode="high"        " Default is normal
     let g:solarized_hitrail=1              " Default is 0
-    colorscheme solarized                  " Or try zenburn
+    silent! colorscheme solarized          " Or try zenburn
 endif
 
 " Mappings               " NB No comment in same line as map command
@@ -172,4 +172,10 @@ map <silent> g* :let @/ = expand('<cword>')\|set hls<CR>
 nmap <silent> <leader>r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
                          " Explore directory of current file
 nmap <leader>e :Explore!<CR>
+
+" Local config
+"=========================================================================
+if filereadable(expand("~/.vimrc_local"))
+    source ~/.vimrc_local
+endif
 
