@@ -166,8 +166,8 @@ nnoremap <silent> <leader>. :bprevious<CR>
 nnoremap <silent> <leader># :b#<CR>
 nnoremap <leader>b :ls<CR>:b<space>
                          " Do not jump to next occurrence on *
-map <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hls<CR>
-map <silent> g* :let @/ = expand('<cword>')\|set hls<CR>
+map <silent> *  :let @/='\<'.expand('<cword>').'\>'\|set hls<CR>
+map <silent> g* :let @/=     expand('<cword>')     \|set hls<CR>
                          " Relative line number toggle
 nmap <silent> <leader>r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
                          " Explore directory of current file
