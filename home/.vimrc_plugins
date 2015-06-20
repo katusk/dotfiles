@@ -19,7 +19,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
 Plugin 'tomasr/molokai'
 " Syntax highlighting
-Plugin 'http://bitbucket.org/alexcolson/kdb-vim.git'
+Plugin 'katusk/vim-qkdb-syntax'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tmux-plugins/vim-tmux'
 " Navigation
