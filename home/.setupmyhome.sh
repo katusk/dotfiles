@@ -11,7 +11,7 @@ git_pull_or_clone git://github.com/andsens/homeshick.git ~/.homesick/repos/homes
 git_pull_or_clone git://github.com/katusk/dotfiles.git ~/.homesick/repos/dotfiles
 git_pull_or_clone git://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 wget -nc -P ~/.vim/autoload https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-wget -nc -P ~/.mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-skin/master/solarized.ini
+wget -nc -P ~/.config/mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-skin/master/solarized.ini
 wget -nc -P ~ https://raw.githubusercontent.com/willnorris/dotfiles/master/lynx/.lynx.lss
 mkdir -p ~/.vim/undodir
 

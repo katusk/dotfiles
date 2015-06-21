@@ -37,5 +37,5 @@ export HISTFILESIZE=65536
 export HISTCONTROL=$HISTCONTROL:ignoredups
 
 export PATH=$PATH:~/.local/bin:~/bin
-export MC_SKIN=~/.mc/colors/solarized.ini
+export MC_SKIN=~/.config/mc/colors/solarized.ini
 export LYNX_LSS=~/.lynx.lss
