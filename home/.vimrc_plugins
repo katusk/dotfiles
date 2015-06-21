@@ -1,10 +1,6 @@
 " Plugins managed by Vundle
 "=========================================================================
 call plug#begin('~/.vim/bundle')
-" Dependencies
-Plug 'xolox/vim-misc'                  " Required by xolox/vim-easytags
-Plug 'MarcWeber/vim-addon-mw-utils'    " Required by garbas/vim-snipmate
-Plug 'tomtom/tlib_vim'
 " Interoperability
 Plug 'nvie/vim-togglemouse'
 Plug 'editorconfig/editorconfig-vim'
@@ -29,9 +25,11 @@ Plug 'derekwyatt/vim-fswitch'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " Code analysis and completion
+Plug 'xolox/vim-misc' |
 Plug 'xolox/vim-easytags'
 Plug 'scrooloose/syntastic'
 Plug 'ervandew/supertab'
+Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' |
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 " Pretty printing
