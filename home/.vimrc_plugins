@@ -1,50 +1,47 @@
 " Plugins managed by Vundle
 "=========================================================================
-set rtp+=~/.vim/bundle/Vundle.vim/
-
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 " Dependencies
-Plugin 'xolox/vim-misc'                  " Required by xolox/vim-easytags
-Plugin 'MarcWeber/vim-addon-mw-utils'    " Required by garbas/vim-snipmate
-Plugin 'tomtom/tlib_vim'
+Plug 'xolox/vim-misc'                  " Required by xolox/vim-easytags
+Plug 'MarcWeber/vim-addon-mw-utils'    " Required by garbas/vim-snipmate
+Plug 'tomtom/tlib_vim'
 " Interoperability
-Plugin 'nvie/vim-togglemouse'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-repeat'
-Plugin 'jpalardy/vim-slime'
-Plugin 'richsoni/vim-ecliptic'
+Plug 'nvie/vim-togglemouse'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-repeat'
+Plug 'jpalardy/vim-slime'
+Plug 'richsoni/vim-ecliptic'
 " Color themes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jnurmine/Zenburn'
-Plugin 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'jnurmine/Zenburn'
+Plug 'tomasr/molokai'
 " Syntax highlighting
-Plugin 'katusk/vim-qkdb-syntax'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'tmux-plugins/vim-tmux'
+Plug 'katusk/vim-qkdb-syntax'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'tmux-plugins/vim-tmux'
 " Navigation
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
-Plugin 'derekwyatt/vim-fswitch'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'kien/ctrlp.vim'
+Plug 'derekwyatt/vim-fswitch'
 " Version control
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 " Code analysis and completion
-Plugin 'xolox/vim-easytags'
-Plugin 'scrooloose/syntastic'
-Plugin 'ervandew/supertab'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+Plug 'xolox/vim-easytags'
+Plug 'scrooloose/syntastic'
+Plug 'ervandew/supertab'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 " Pretty printing
-Plugin 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 " Editing
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-surround'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'godlygeek/tabular'
-call vundle#end()
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
+Plug 'tomtom/tcomment_vim'
+Plug 'godlygeek/tabular'
+call plug#end()
 
 " Plugin mappings        " NB No comment in same line as map command
 "=========================================================================
