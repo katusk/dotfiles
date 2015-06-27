@@ -138,6 +138,13 @@ let g:slime_target="tmux"
 let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 let g:slime_python_ipython=1
 
+" delimitMate                              github.com/Raimondi/delimitMate
+"-------------------------------------------------------------------------
+augroup delimitMate_qkdb_settings
+    au FileType k,q let b:delimitMate_matchpairs = "(:),[:],{:}"
+    au FileType k,q let b:delimitMate_quotes = "\""
+augroup END
+
 " Eclim                                 eclim.org/vim/code_completion.html
 "-------------------------------------------------------------------------
 let g:EclimCompletionMethod='omnifunc'

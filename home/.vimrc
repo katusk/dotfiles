@@ -110,9 +110,11 @@ set tags=./tags;
 " File type plugins
 "=========================================================================
 filetype plugin indent on
-autocmd FileType make set noexpandtab
-autocmd FileType gitconfig set noexpandtab
-autocmd FileType python set expandtab
+augroup myvimrc_group
+    autocmd FileType make set noexpandtab
+    autocmd FileType gitconfig set noexpandtab
+    autocmd FileType python set expandtab
+augroup END
 
 " Other options
 "=========================================================================
