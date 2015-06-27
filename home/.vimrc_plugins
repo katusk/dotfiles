@@ -61,6 +61,8 @@ let g:ctrlp_map='<c-p>'
                          " Vim-Slime
 nmap <Plug>NoSlimeParagraphSend <Plug>SlimeParagraphSend
 nmap <c-c><c-c> <Plug>SlimeLineSend
+                         " delimitMate remap; clash with snipMateBack
+imap <S-Tab> <Plug>delimitMateS-Tab
 
 " Plugin settings
 "=========================================================================
@@ -140,6 +142,9 @@ let g:slime_python_ipython=1
 
 " delimitMate                              github.com/Raimondi/delimitMate
 "-------------------------------------------------------------------------
+let delimitMate_expand_cr=2
+let delimitMate_expand_space=1
+let delimitMate_jump_expansion=1
 augroup delimitMate_qkdb_settings
     au FileType k,q let b:delimitMate_matchpairs = "(:),[:],{:}"
     au FileType k,q let b:delimitMate_quotes = "\""
