@@ -30,7 +30,8 @@ endif
 
 " Basic editing behaviour
 "=========================================================================
-set timeoutlen=700     " Waits this long between keys in key sequence
+set timeoutlen=700     " Waits max this long between keys in mappings
+set ttimeoutlen=100    " Waits max this long between key codes
 set mouse=a            " Enable mouse in all modes
 set ttymouse=xterm2    " Terminal type for mouse codes
 
