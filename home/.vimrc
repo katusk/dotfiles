@@ -1,7 +1,7 @@
 set encoding=utf-8
 set langmenu=en_US.UTF-8         " Language of the menu (gVim)
 language messages en_US.UTF-8    " Language of the messages/UI (Vim)
-set clipboard-=autoselect        " Do not auto-yank selection in Visual mode
+set clipboard-=autoselect        " Do not auto-yank Visual mode selection
 if has("win32") || has("win64")
     set directory=$TEMP,.        " Swap file fix under Windows
     set backupdir=$TEMP,.        " Change backup directory too
