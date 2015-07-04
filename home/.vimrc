@@ -129,7 +129,7 @@ set ruler                " Show the cursor position
 set showmode             " Show the current mode
 set title                " Show the filename in the window titlebar
 set showcmd              " Show the (partial) command as it is being typed
-set colorcolumn=80       " Show the print margin
+set colorcolumn=+0       " Show the print margin
 set cursorline           " Highlight the screen line of the cursor
 
 " Colors
