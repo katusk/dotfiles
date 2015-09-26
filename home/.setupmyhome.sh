@@ -18,10 +18,8 @@ mkdir -p ~/.vim/undodir
 # Set up environment
 ~/.homesick/repos/homeshick/bin/homeshick link
 vim +PlugUpgrade +PlugUpdate +qall
-tmux new -d
-tmux run "~/.tmux/plugins/tpm/scripts/install_plugins.sh"
-tmux run "~/.tmux/plugins/tpm/scripts/update_plugin.sh all"
-tmux kill-session
+~/.tmux/plugins/tpm/bin/install_plugins
+~/.tmux/plugins/tpm/bin/update_plugins all
 
 # Reminders
 set +x
