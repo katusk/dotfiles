@@ -136,18 +136,24 @@ set cursorline           " Highlight the screen line of the cursor
 "=========================================================================
 " If colors via Putty funny, set term-type to 'putty-256color' in Putty.
 " If still color issues, open a new line below containing 'set t_Co=16'.
-if &t_Co > 2 || has("gui_running")
-    syntax on
+if &t_Co > 2 || has("gui_running") || !empty($CONEMUBUILD)
+    syntax on                              " Minimum setting (>=2-color)
     set background=dark                    " Overwritten in gvimrc
 endif
 
-" Color scheme specific settings
+" Color scheme settings per environment
 "-------------------------------------------------------------------------
-if &t_Co >= 16 || has("gui_running")
+if !empty($CONEMUBUILD)                    " ConEmu settings (=256-color)
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+    sil! colorscheme zenburn               " Works with generic 256-colors
+elseif &t_Co >= 16 || has("gui_running")   " Solarized only (>=16-color)
     let g:solarized_contrast="high"        " Default is normal
     let g:solarized_diffmode="high"        " Default is normal
     let g:solarized_hitrail=1              " Default is 0
-    sil! colorscheme solarized             " Or try zenburn
+    sil! colorscheme solarized             " Needs own 16-color palette
 endif
 
 " Mappings               " NB No comment in same line as map command
