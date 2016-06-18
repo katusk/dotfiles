@@ -16,7 +16,7 @@ Plug 'katusk/vim-qkdb-syntax'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tmux-plugins/vim-tmux'
 " Navigation
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'

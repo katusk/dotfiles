@@ -13,6 +13,9 @@ git_pull_or_clone git://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 wget -nc -P ~/.vim/autoload https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 wget -nc -P ~/.config/mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-skin/master/solarized.ini
 wget -nc -O ~/.lynx.lss https://raw.githubusercontent.com/willnorris/dotfiles/master/lynx.lss
+mkdir -p ~/.mintty/themes &&
+wget -nc -O ~/.mintty/themes/solarized-dark.minttyrc https://raw.githubusercontent.com/mavnn/mintty-colors-solarized/master/.minttyrc.dark
+wget -nc -O ~/.dircolors https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
 mkdir -p ~/.vim/undodir
 
 # Set up environment
