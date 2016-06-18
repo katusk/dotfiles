@@ -12,7 +12,7 @@ git_pull_or_clone git://github.com/katusk/dotfiles.git ~/.homesick/repos/dotfile
 git_pull_or_clone git://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 wget -nc -P ~/.vim/autoload https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 wget -nc -P ~/.config/mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-skin/master/solarized.ini
-wget -nc -P ~ https://raw.githubusercontent.com/willnorris/dotfiles/master/lynx/.lynx.lss
+wget -nc -P ~ -O .lynx.lss https://raw.githubusercontent.com/willnorris/dotfiles/master/lynx.lss
 mkdir -p ~/.vim/undodir
 
 # Set up environment
