@@ -138,7 +138,9 @@ let g:EditorConfig_exclude_patterns=['fugitive://.*']
 "-------------------------------------------------------------------------
 let g:slime_target="tmux"
 let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
-let g:slime_python_ipython=1
+if executable("ipython") && exepath("ipython") !~ "cygdrive"
+    let g:slime_python_ipython=1
+endif
 
 " delimitMate                              github.com/Raimondi/delimitMate
 "-------------------------------------------------------------------------
