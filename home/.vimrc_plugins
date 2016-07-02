@@ -2,11 +2,9 @@
 "=========================================================================
 call plug#begin('~/.vim/bundle')
 " Interoperability
-Plug 'nvie/vim-togglemouse'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-repeat'
 Plug 'jpalardy/vim-slime'
-Plug 'richsoni/vim-ecliptic'
 " Color themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'jnurmine/Zenburn'
@@ -28,10 +26,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'xolox/vim-misc' |
 \ Plug 'xolox/vim-easytags'
 Plug 'scrooloose/syntastic'
-Plug 'ervandew/supertab'
-Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' |
-\ Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
 " Pretty printing
 Plug 'Chiel92/vim-autoformat'
 " Editing
@@ -52,10 +46,6 @@ nnoremap <leader>t :Tabularize /
 vnoremap <leader>t :Tabularize /
                          " FSwitch. See github.com/derekwyatt/vim-fswitch
 nmap <silent> <leader>a :FSHere<CR>
-                         " SuperTab. Note: tab is used by SnipMate
-let g:SuperTabMappingForward='<leader><tab>'
-let g:SuperTabMappingBackward='<nop>'
-let g:SuperTabMappingTabLiteral='<nop>'
                          " CtrlP
 let g:ctrlp_map='<c-p>'
                          " Vim-Slime
@@ -122,14 +112,6 @@ endif
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 
-" SuperTab                                    github.com/ervandew/supertab
-"-------------------------------------------------------------------------
-let g:SuperTabDefaultCompletionType='context'
-let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
-let g:SuperTabRetainCompletionDuration='completion'
-let g:SuperTabClosePreviewOnPopupClose=1
-let g:SuperTabLongestEnhanced=1
-
 " EditorConfig                    github.com/editorconfig/editorconfig-vim
 "-------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns=['fugitive://.*']
@@ -151,8 +133,3 @@ augroup delimitMate_qkdb_settings
     au FileType k,q let b:delimitMate_matchpairs = "(:),[:],{:}"
     au FileType k,q let b:delimitMate_quotes = "\""
 augroup END
-
-" Eclim                                 eclim.org/vim/code_completion.html
-"-------------------------------------------------------------------------
-let g:EclimCompletionMethod='omnifunc'
-
