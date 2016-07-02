@@ -3,34 +3,33 @@
 call plug#begin('~/.vim/bundle')
 " Interoperability
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-repeat'
 Plug 'jpalardy/vim-slime'
 " Color themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'jnurmine/Zenburn'
 Plug 'tomasr/molokai'
 " Syntax highlighting
-Plug 'katusk/vim-qkdb-syntax'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'katusk/vim-qkdb-syntax'
 Plug 'tmux-plugins/vim-tmux'
 " Navigation
+Plug 'kien/ctrlp.vim'
+Plug 'derekwyatt/vim-fswitch'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'kien/ctrlp.vim'
-Plug 'derekwyatt/vim-fswitch'
 " Version control
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " Code analysis and completion
-Plug 'xolox/vim-misc' |
-\ Plug 'xolox/vim-easytags'
 Plug 'scrooloose/syntastic'
+Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
 " Pretty printing
 Plug 'Chiel92/vim-autoformat'
 " Editing
-Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tcomment_vim'
 Plug 'godlygeek/tabular'
 call plug#end()
@@ -129,7 +128,8 @@ endif
 let delimitMate_expand_cr=2
 let delimitMate_expand_space=1
 let delimitMate_jump_expansion=1
-augroup delimitMate_qkdb_settings
+augroup myvimrc_delimitMate_augroup
     au FileType k,q let b:delimitMate_matchpairs = "(:),[:],{:}"
     au FileType k,q let b:delimitMate_quotes = "\""
 augroup END
+
