@@ -54,6 +54,8 @@ nmap <Plug>NoSlimeParagraphSend <Plug>SlimeParagraphSend
 nmap <c-c><c-c> <Plug>SlimeLineSend
                          " YouCompleteMe
 nmap <leader>g  :YcmCompleter GoTo<CR>
+nmap <leader>r  :YcmCompleter GoToReferences<CR>
+nmap <leader>d  :YcmCompleter GetDoc<CR>
 
 " Plugin settings
 "=========================================================================
@@ -144,6 +146,8 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " YouCompleteMe                          github.com/Valloric/YouCompleteMe
 "-------------------------------------------------------------------------
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_key_detailed_diagnostics='<leader>i'
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 let g:ycm_key_invoke_completion = ''

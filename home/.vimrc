@@ -63,6 +63,10 @@ set incsearch          " Show search matches as you type
 
 set splitbelow         " More natural :split behaviour
 set splitright         " More natural :vsplit behaviour
+augroup myvimrc_PreviewOnTop_augroup
+    autocmd InsertEnter * set nosplitbelow
+    autocmd InsertLeave * set splitbelow
+augroup END
 
 " Advanced editing behaviour
 "=========================================================================
@@ -182,7 +186,7 @@ nnoremap <leader>b :ls<CR>:b<space>
 map <silent> *  :let @/='\<'.expand('<cword>').'\>'\|set hls<CR>
 map <silent> g* :let @/=     expand('<cword>')     \|set hls<CR>
                          " Relative line number toggle
-nmap <silent> <leader>r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
+nmap <silent> <leader>l :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
                          " Explore directory of current file
 nmap <leader>e :Explore!<CR>
 
