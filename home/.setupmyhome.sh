@@ -11,9 +11,11 @@ function wget_to_as {
     mkdir -p $2 && [ -e $2/$3 ] || wget -nc -O $2/$3 $1
 }
 
-# Advise installing $1 binary
+# Advise installing $i binary
 function advise_install {
-    if [ ! -x `type -p $1` ]; then echo "# $1 should be installed"; fi
+    for i in "$@"; do
+        if ! type $i &> /dev/null; then echo "# $i should be installed"; fi
+    done
 }
 
 # Install homeshick, my dotfiles, vim plugin manager, etc.
@@ -38,9 +40,7 @@ vim +PlugUpgrade +PlugUpdate +qall
 # Reminders
 set +x
 echo "*** Do not forget the following ***"
-advise_install ctags
-advise_install cmake
-advise_install xsel
+advise_install ctags cmake xsel
 echo ". ~/.bashrc"
 echo "lynx http://ethanschoonover.com/solarized"
 echo "lynx https://github.com/Valloric/YouCompleteMe#installation"
