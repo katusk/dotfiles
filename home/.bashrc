@@ -22,7 +22,6 @@ alias dotfiles="cd ~/.homesick/repos/dotfiles/home"
 alias tmux-current-vi-binds="tmux_list_vi_binds ~/.tmux.conf"
 alias tmux-default-vi-binds="tmux_list_vi_binds /dev/null"
 
-if [ -x `type -p vimx` ]; then alias vim='vimx'; fi
 alias la='ls --color=auto -la'
 alias lc='ls --color=always'
 alias grepc='grep --color=always'
@@ -37,6 +36,7 @@ export HISTFILESIZE=65536
 export HISTCONTROL=$HISTCONTROL:ignoredups
 
 export PATH=`echo $PATH|sed -e 's/:\/cygdrive\/[^:]*//g'`:~/.local/bin:~/bin
+export PYTHONPATH=$PYTHONPATH:~/.vim/bundle/ropevim
 export MC_SKIN=~/.config/mc/colors/solarized.ini
 export LYNX_LSS=~/.lynx.lss
 
