@@ -115,7 +115,10 @@ filetype plugin indent on
 augroup myvimrc_augroup
     autocmd FileType make set noexpandtab
     autocmd FileType gitconfig set noexpandtab
-    autocmd FileType python set expandtab
+    autocmd FileType python
+        \ set textwidth=79 |
+        \ set fileformat=unix |
+        \ let python_highlight_all=1
 augroup END
 
 " Other options

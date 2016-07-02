@@ -11,6 +11,11 @@ function wget_to_as {
     mkdir -p $2 && [ -e $2/$3 ] || wget -nc -O $2/$3 $1
 }
 
+# Advise installing $1 binary
+function advise_install {
+    if [ ! -x `type -p $1` ]; then echo "# $1 should be installed"; fi
+}
+
 # Install homeshick, my dotfiles, vim plugin manager, etc.
 git_pull_or_clone git://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
 git_pull_or_clone git://github.com/katusk/dotfiles.git ~/.homesick/repos/dotfiles
@@ -22,6 +27,8 @@ wget_to_as https://raw.githubusercontent.com/mavnn/mintty-colors-solarized/maste
     sed -i -e 's/CursorColour=    220,  50,  47/CursorColour=    147, 161, 161/g' ~/.mintty/themes/solarized-dark.minttyrc
 wget_to_as https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark ~ .dircolors
 mkdir -p ~/.vim/undodir
+pip install flake8
+pip install jedi
 
 # Set up environment
 ~/.homesick/repos/homeshick/bin/homeshick link
@@ -32,6 +39,9 @@ vim +PlugUpgrade +PlugUpdate +qall
 # Reminders
 set +x
 echo "*** Do not forget the following ***"
-if [ ! -x `type -p xsel` ]; then echo "# xsel might be needed to be installed"; fi
+advise_install ctags
+advise_install cmake
+advise_install xsel
 echo ". ~/.bashrc"
 echo "lynx http://ethanschoonover.com/solarized"
+echo "lynx https://github.com/Valloric/YouCompleteMe#installation"

@@ -23,6 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " Code analysis and completion
 Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
 " Pretty printing
 Plug 'Chiel92/vim-autoformat'
@@ -52,6 +53,8 @@ nmap <Plug>NoSlimeParagraphSend <Plug>SlimeParagraphSend
 nmap <c-c><c-c> <Plug>SlimeLineSend
                          " delimitMate remap; clash with snipMateBack
 imap <S-Tab> <Plug>delimitMateS-Tab
+                         " YouCompleteMe
+nmap <leader>g  :YcmCompleter GoTo<CR>
 
 " Plugin settings
 "=========================================================================
@@ -133,3 +136,9 @@ augroup myvimrc_delimitMate_augroup
     au FileType k,q let b:delimitMate_quotes = "\""
 augroup END
 
+" YouCompleteMe                          github.com/Valloric/YouCompleteMe
+"-------------------------------------------------------------------------
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+let g:ycm_key_invoke_completion = ''
