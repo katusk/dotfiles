@@ -36,7 +36,7 @@ export HISTSIZE=8192
 export HISTFILESIZE=65536
 export HISTCONTROL=$HISTCONTROL:ignoredups
 
-export PATH=$PATH:~/.local/bin:~/bin
+export PATH=`echo $PATH|sed -e 's/:\/cygdrive\/[^:]*//g'`:~/.local/bin:~/bin
 export MC_SKIN=~/.config/mc/colors/solarized.ini
 export LYNX_LSS=~/.lynx.lss
 
