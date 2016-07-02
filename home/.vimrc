@@ -18,6 +18,7 @@ endif
 "=========================================================================
 set nocompatible        " Turn off Vi compatibility for all Vim features
 set cpo+=$              " Show '$' after the last character to be changed
+let mapleader=","       " Change the mapleader from \ to ,
 filetype off            " Ensure adding ftdetect scripts below always work
 
 " Plugins
@@ -166,7 +167,6 @@ endif
 " Mappings               " NB No comment in same line as map command
 "=========================================================================
 set pastetoggle=<F2>     " Disable format options when pasting for sanity
-let mapleader=","        " Change the mapleader from \ to ,
                          " Quickly clear the search buffer
 nmap <silent> <leader>/ :nohls<CR>
                          " Exiting Insert mode: <M-j> jk ;; ,,

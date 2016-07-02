@@ -52,10 +52,15 @@ let g:ctrlp_map='<c-p>'
                          " Vim-Slime
 nmap <Plug>NoSlimeParagraphSend <Plug>SlimeParagraphSend
 nmap <c-c><c-c> <Plug>SlimeLineSend
+                         " UltiSnips
+let g:UltiSnipsExpandTrigger="<leader><Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
                          " YouCompleteMe
-nmap <leader>g  :YcmCompleter GoTo<CR>
-nmap <leader>r  :YcmCompleter GoToReferences<CR>
-nmap <leader>d  :YcmCompleter GetDoc<CR>
+let g:ycm_key_detailed_diagnostics='<leader>i'
+nnoremap <silent> <leader>g :YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <silent> <leader>d :YcmCompleter GetDoc<CR>
 
 " Plugin settings
 "=========================================================================
@@ -137,17 +142,10 @@ augroup myvimrc_delimitMate_augroup
     au FileType k,q let b:delimitMate_quotes = "\""
 augroup END
 
-" UltiSnips                                    github.com/SirVer/ultisnips
-"-------------------------------------------------------------------------
-let g:UltiSnipsExpandTrigger="<leader><Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-
 " YouCompleteMe                          github.com/Valloric/YouCompleteMe
 "-------------------------------------------------------------------------
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_collect_identifiers_from_tags_files=1
-let g:ycm_key_detailed_diagnostics='<leader>i'
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 let g:ycm_key_invoke_completion = ''
