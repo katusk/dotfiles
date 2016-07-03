@@ -164,31 +164,42 @@ elseif &t_Co >= 16 || has("gui_running")   " Solarized only (>=16-color)
     sil! colorscheme solarized             " Needs own 16-color palette
 endif
 
-" Mappings               " NB No comment in same line as map command
+" Mappings                     " NB No comment in same line as map command
 "=========================================================================
-set pastetoggle=<F2>     " Disable format options when pasting for sanity
-                         " Quickly clear the search buffer
+" Exiting Insert mode: <M-j> jk ;; ,,
+inoremap <silent> <leader>, <Esc>
+" A bit more convenient access to Ex commands
+nmap <space> :
+" Always jump to the next screen row
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+nnoremap <silent> gj j
+nnoremap <silent> gk k
+" Quickly clear the search buffer
 nmap <silent> <leader>/ :nohls<CR>
-                         " Exiting Insert mode: <M-j> jk ;; ,,
-inoremap <leader>, <Esc>
-                         " Quickly edit/reload the vimrc file
-nmap <silent> <leader><S-E> :e $MYVIMRC<CR>
-nmap <silent> <leader><S-S> :so $MYVIMRC<CR>
-                         " Always jump to the next screen row
-nnoremap j gj
-nnoremap k gk
-                         " Cycle thru buffers, easier buffer switching
-nnoremap <silent> <leader>, :bnext<CR>
-nnoremap <silent> <leader>. :bprevious<CR>
-nnoremap <silent> <leader># :b#<CR>
-nnoremap <leader>b :ls<CR>:b<space>
-                         " Do not jump to next occurrence on *
-map <silent> *  :let @/='\<'.expand('<cword>').'\>'\|set hls<CR>
-map <silent> g* :let @/=     expand('<cword>')     \|set hls<CR>
-                         " Relative line number toggle
-nmap <silent> <leader>l :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
-                         " Explore directory of current file
-nmap <leader>e :Explore!<CR>
+" Do not jump to next occurrence on *
+map <silent> * :let @/='\<'.expand('<cword>').'\>'\|set hls<CR>
+map <silent> g* :let @/=expand('<cword>')\|set hls<CR>
+
+" Relative line number toggle
+nmap <silent> <leader>,r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
+" Disable format options when pasting for sanity
+nmap <silent> <leader>,p :set invpaste<CR>
+
+" Quickly edit/reload the configuration file
+nmap <silent> <leader>fed :e $MYVIMRC<CR>
+nmap <silent> <leader>fsd :so $MYVIMRC<CR>
+nmap <silent> <leader>fep :e ${MYVIMRC}_plugins<CR>
+nmap <silent> <leader>feo :e ${MYVIMRC}_plugout<CR>
+
+" Cycle thru buffers, easier buffer switching
+nnoremap <silent> <leader>bn :bnext<CR>
+nnoremap <silent> <leader>bp :bprevious<CR>
+nnoremap <silent> <leader>b# :b#<CR>
+nnoremap <leader>bl :ls<CR>:b<space>
+
+" Explore directory of current file
+nmap <leader>ee :Explore!<CR>
 
 " Local config
 "=========================================================================

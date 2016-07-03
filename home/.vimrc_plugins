@@ -6,8 +6,8 @@ let $PYTHONPATH .=
 "=========================================================================
 call plug#begin('~/.vim/bundle')
 " Interoperability
-Plug 'editorconfig/editorconfig-vim'
 Plug 'jpalardy/vim-slime'
+Plug 'editorconfig/editorconfig-vim'
 " Color themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'jnurmine/Zenburn'
@@ -29,43 +29,46 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'python-rope/ropevim' | Plug 'python-rope/ropemode'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Pretty printing
 Plug 'Chiel92/vim-autoformat'
 " Editing
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tcomment_vim'
 Plug 'godlygeek/tabular'
 call plug#end()
 
-" Plugin mappings        " NB No comment in same line as map command
+" Plugin mappings              " NB No comment in same line as map command
 "=========================================================================
-nmap <F3> :NERDTreeToggle<CR>
-nmap <F4> :TagbarToggle<CR>
-                         " Autoformat. Also see gq{motion}
-nnoremap <leader>q :Autoformat<CR>
-                         " Tabularize with ease
-nnoremap <leader>t :Tabularize /
-vnoremap <leader>t :Tabularize /
-                         " FSwitch. See github.com/derekwyatt/vim-fswitch
-nmap <silent> <leader>a :FSHere<CR>
-                         " CtrlP
+" Explore toggles and CtrlP special
+nmap <silent> <leader>en :NERDTreeToggle<CR>
+nmap <silent> <leader>et :TagbarToggle<CR>
 let g:ctrlp_map='<c-p>'
-                         " Vim-Slime
-nmap <Plug>NoSlimeParagraphSend <Plug>SlimeParagraphSend
-nmap <c-c><c-c> <Plug>SlimeLineSend
-                         " UltiSnips
+
+" GoTo and Get commands with YouCompleteMe and FSwitch
+nmap <silent> <leader>go :FSHere<CR>
+let g:ycm_key_detailed_diagnostics='<leader>gi'
+nnoremap <silent> <leader>gg :YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>gf :YcmCompleter GoToReferences<CR>
+nnoremap <silent> <leader>gd :YcmCompleter GetDoc<CR>
+
+" Autoformat the file (also see gq) and Tabularize with ease
+nnoremap <silent> <leader>qf :Autoformat<CR>
+nnoremap <leader>qt :Tabularize /
+vnoremap <leader>qt :Tabularize /
+
+" Vim-Slime
+nmap <leader>ss <Plug>SlimeLineSend
+xmap <leader>ss <Plug>SlimeRegionSend
+nmap <leader>sp <Plug>SlimeParagraphSend
+
+" UltiSnips
 let g:UltiSnipsExpandTrigger="<leader><Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-                         " YouCompleteMe
-let g:ycm_key_detailed_diagnostics='<leader>i'
-nnoremap <silent> <leader>g :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>r :YcmCompleter GoToReferences<CR>
-nnoremap <silent> <leader>d :YcmCompleter GetDoc<CR>
 
 " Plugin settings
 "=========================================================================
@@ -110,7 +113,7 @@ let g:easytags_async=1
 "-------------------------------------------------------------------------
 let g:ctrlp_cmd='CtrlP'
 let g:ctrlp_show_hidden=1
-let g:ctrlp_max_files=8000
+let g:ctrlp_max_files=4000
 let g:ctrlp_lazy_update=120
 
 " Gitgutter                   github.com/airblade/vim-gitgutter/issues/164
@@ -131,6 +134,7 @@ let g:EditorConfig_exclude_patterns=['fugitive://.*']
 
 " Vim-Slime                                  github.com/jpalardy/vim-slime
 "-------------------------------------------------------------------------
+let g:slime_no_mappings=1
 let g:slime_target="tmux"
 let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 if executable("ipython") &&
