@@ -2,7 +2,7 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -36,7 +36,6 @@ export HISTFILESIZE=65536
 export HISTCONTROL=$HISTCONTROL:ignoredups
 
 export PATH=`echo $PATH|sed -e 's/:\/cygdrive\/[^:]*//g'`:~/.local/bin:~/bin
-export PYTHONPATH=$PYTHONPATH:~/.vim/bundle/ropevim
 export MC_SKIN=~/.config/mc/colors/solarized.ini
 export LYNX_LSS=~/.lynx.lss
 
