@@ -43,9 +43,9 @@ call plug#end()
 
 " Plugin mappings              " NB No comment in same line as map command
 "=========================================================================
-" Explore toggles and CtrlP special
-nmap <silent> <leader>en :NERDTreeToggle<CR>
-nmap <silent> <leader>et :TagbarToggle<CR>
+" Explorer bar toggles and CtrlP special
+nmap <silent> <leader>,n :NERDTreeToggle<CR>
+nmap <silent> <leader>,t :TagbarToggle<CR>
 let g:ctrlp_map='<c-p>'
 
 " GoTo and Get commands with YouCompleteMe and FSwitch
