@@ -33,9 +33,8 @@ pip install flake8 jedi rope
 
 # Set up environment
 ~/.homesick/repos/homeshick/bin/homeshick link
-vim +PlugUpgrade +PlugUpdate +qall
-~/.tmux/plugins/tpm/bin/install_plugins
-~/.tmux/plugins/tpm/bin/update_plugins all
+vim +PlugUpgrade +PlugInstall +qall # +PlugUpdate +PlugClean
+~/.tmux/plugins/tpm/bin/install_plugins # ~/.tmux/plugins/tpm/bin/update_plugins all
 
 # Reminders
 set +x
