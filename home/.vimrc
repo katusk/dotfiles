@@ -18,7 +18,7 @@ endif
 "=========================================================================
 set nocompatible        " Turn off Vi compatibility for all Vim features
 set cpo+=$              " Show '$' after the last character to be changed
-let mapleader=","       " Change the mapleader from \ to ,
+let mapleader=" "       " Change the mapleader from \ to <space>
 filetype off            " Ensure adding ftdetect scripts below always work
 
 " Plugins
@@ -166,10 +166,10 @@ endif
 
 " Mappings                     " NB No comment in same line as map command
 "=========================================================================
-" Exiting Insert mode: <M-j> jk ;; ,,
-inoremap <silent> <leader>, <Esc>
+" Exiting Insert mode: <M-j> jj jk kj fd ;; ,,
+inoremap <silent> jk <Esc>
 " A bit more convenient access to Ex commands
-nmap <space> :
+nmap <CR> :
 " Always jump to the next screen row
 nnoremap <silent> j gj
 nnoremap <silent> k gk
