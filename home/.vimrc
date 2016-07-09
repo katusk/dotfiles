@@ -180,6 +180,12 @@ nnoremap <silent> <leader>/ :nohls<CR>
 " Do not jump to next occurrence on *
 noremap <silent> * :let @/='\<'.expand('<cword>').'\>'\|set hls<CR>
 noremap <silent> g* :let @/=expand('<cword>')\|set hls<CR>
+" Shift selected lines and keep them selected
+vnoremap <silent> < <gv
+vnoremap <silent> > >gv
+" Do not yank deleted text
+nnoremap <silent> <leader>d "_d
+vnoremap <silent> <leader>d "_d
 
 " Relative line number toggle
 nnoremap <silent> <leader>,r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
