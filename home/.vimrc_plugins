@@ -1,8 +1,7 @@
 augroup myvimrc_PythonPath_augroup
-    autocmd FileType python
-        \ let $PYTHONPATH .=
-            \ ':'.expand('~/.vim/bundle/ropemode').
-            \ ':'.expand('~/.vim/bundle/ropevim')
+    autocmd VimEnter * let $PYTHONPATH .=
+        \ ':'.expand('~/.vim/bundle/ropemode').
+        \ ':'.expand('~/.vim/bundle/ropevim')
 augroup END
 
 " Managed plugins
@@ -143,8 +142,12 @@ let g:EditorConfig_exclude_patterns=['fugitive://.*']
 " Vim-Slime                                  github.com/jpalardy/vim-slime
 "-------------------------------------------------------------------------
 let g:slime_no_mappings=1
-let g:slime_target="tmux"
 let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
+if has("win32") || has("win64")
+    let g:slime_target="conemu"
+else
+    let g:slime_target="tmux"
+endif
 if executable("ipython") &&
     \ exists("*exepath") && exepath("ipython") !~ "cygdrive"
     let g:slime_python_ipython=1
