@@ -169,28 +169,28 @@ endif
 " Exiting Insert mode: <M-j> jj jk kj fd ;; ,,
 inoremap <silent> jk <Esc>
 " A bit more convenient access to Ex commands
-nmap <CR> :
+nnoremap <CR> :
 " Always jump to the next screen row
 nnoremap <silent> j gj
 nnoremap <silent> k gk
 nnoremap <silent> gj j
 nnoremap <silent> gk k
 " Quickly clear the search buffer
-nmap <silent> <leader>/ :nohls<CR>
+nnoremap <silent> <leader>/ :nohls<CR>
 " Do not jump to next occurrence on *
-map <silent> * :let @/='\<'.expand('<cword>').'\>'\|set hls<CR>
-map <silent> g* :let @/=expand('<cword>')\|set hls<CR>
+noremap <silent> * :let @/='\<'.expand('<cword>').'\>'\|set hls<CR>
+noremap <silent> g* :let @/=expand('<cword>')\|set hls<CR>
 
 " Relative line number toggle
-nmap <silent> <leader>,r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
+nnoremap <silent> <leader>,r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
 " Disable format options when pasting for sanity
-nmap <silent> <leader>,p :set invpaste<CR>
+nnoremap <silent> <leader>,p :set invpaste<CR>
 
 " Quickly edit/reload the configuration file
-nmap <silent> <leader>fed :e $MYVIMRC<CR>
-nmap <silent> <leader>fsd :so $MYVIMRC<CR>
-nmap <silent> <leader>fep :e ${MYVIMRC}_plugins<CR>
-nmap <silent> <leader>feo :e ${MYVIMRC}_plugout<CR>
+nnoremap <silent> <leader>fed :e $MYVIMRC<CR>
+nnoremap <silent> <leader>fsd :so $MYVIMRC<CR>
+nnoremap <silent> <leader>fep :e ${MYVIMRC}_plugins<CR>
+nnoremap <silent> <leader>feo :e ${MYVIMRC}_plugout<CR>
 
 " Cycle thru buffers, easier buffer switching
 nnoremap <silent> <leader>bn :bnext<CR>
@@ -199,7 +199,7 @@ nnoremap <silent> <leader>b# :b#<CR>
 nnoremap <leader>bl :ls<CR>:b<space>
 
 " Explore directory of current file
-nmap <leader>ee :Explore!<CR>
+nnoremap <leader>ee :Explore!<CR>
 
 " Local config
 "=========================================================================

@@ -44,12 +44,12 @@ call plug#end()
 " Plugin mappings              " NB No comment in same line as map command
 "=========================================================================
 " Explorer bar toggles and CtrlP special
-nmap <silent> <leader>,n :NERDTreeToggle<CR>
-nmap <silent> <leader>,t :TagbarToggle<CR>
+nnoremap <silent> <leader>,n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>,t :TagbarToggle<CR>
 let g:ctrlp_map='<c-p>'
 
 " GoTo and Get commands with YouCompleteMe and FSwitch
-nmap <silent> <leader>go :FSHere<CR>
+nnoremap <silent> <leader>go :FSHere<CR>
 let g:ycm_key_detailed_diagnostics='<leader>gi'
 nnoremap <silent> <leader>gg :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gf :YcmCompleter GoToReferences<CR>
@@ -61,9 +61,9 @@ nnoremap <leader>qt :Tabularize /
 vnoremap <leader>qt :Tabularize /
 
 " Vim-Slime
-nmap <leader>ss <Plug>SlimeLineSend
-xmap <leader>ss <Plug>SlimeRegionSend
-nmap <leader>sp <Plug>SlimeParagraphSend
+nnoremap <leader>ss <Plug>SlimeLineSend
+xnoremap <leader>ss <Plug>SlimeRegionSend
+nnoremap <leader>sp <Plug>SlimeParagraphSend
 
 " Refactor with ropevim
 let g:ropevim_local_prefix="<leader>r"
