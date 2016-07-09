@@ -117,7 +117,7 @@ set tags=./tags;
 " File type plugins
 "=========================================================================
 filetype plugin indent on
-augroup myvimrc_augroup
+augroup myvimrc_FileType_augroup
     autocmd FileType make set noexpandtab
     autocmd FileType gitconfig set noexpandtab
     autocmd FileType python
@@ -176,7 +176,7 @@ nnoremap <silent> k gk
 nnoremap <silent> gj j
 nnoremap <silent> gk k
 " Quickly clear the search buffer
-nnoremap <silent> <leader>/ :nohls<CR>
+nnoremap <silent> ,/ :nohls<CR>
 " Do not jump to next occurrence on *
 noremap <silent> * :let @/='\<'.expand('<cword>').'\>'\|set hls<CR>
 noremap <silent> g* :let @/=expand('<cword>')\|set hls<CR>
@@ -184,8 +184,8 @@ noremap <silent> g* :let @/=expand('<cword>')\|set hls<CR>
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 " Do not yank deleted text
-nnoremap <silent> <leader>d "_d
-vnoremap <silent> <leader>d "_d
+nnoremap <silent> ,d "_d
+vnoremap <silent> ,d "_d
 
 " Relative line number toggle
 nnoremap <silent> <leader>,r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
@@ -194,9 +194,11 @@ nnoremap <silent> <leader>,p :set invpaste<CR>
 
 " Quickly edit/reload the configuration file
 nnoremap <silent> <leader>fed :e $MYVIMRC<CR>
+nnoremap <silent> <leader>fep :exe ':e '.$MYVIMRC.'_plugins'<CR>
+nnoremap <silent> <leader>feo :exe ':e '.$MYVIMRC.'_plugout'<CR>
+nnoremap <silent> <leader>feg :e $MYGVIMRC<CR>
 nnoremap <silent> <leader>fsd :so $MYVIMRC<CR>
-nnoremap <silent> <leader>fep :e ${MYVIMRC}_plugins<CR>
-nnoremap <silent> <leader>feo :e ${MYVIMRC}_plugout<CR>
+nnoremap <silent> <leader>fsg :so $MYGVIMRC<CR>
 
 " Cycle thru buffers, easier buffer switching
 nnoremap <silent> <leader>bn :bnext<CR>

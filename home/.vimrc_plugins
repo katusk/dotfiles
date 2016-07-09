@@ -1,6 +1,9 @@
-let $PYTHONPATH .=
-    \ ':'.expand('~/.vim/bundle/ropemode').
-    \ ':'.expand('~/.vim/bundle/ropevim')
+augroup myvimrc_PythonPath_augroup
+    autocmd FileType python
+        \ let $PYTHONPATH .=
+            \ ':'.expand('~/.vim/bundle/ropemode').
+            \ ':'.expand('~/.vim/bundle/ropevim')
+augroup END
 
 " Managed plugins
 "=========================================================================
@@ -30,7 +33,7 @@ Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'python-rope/ropevim' | Plug 'python-rope/ropemode'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe'
 " Pretty printing
 Plug 'Chiel92/vim-autoformat'
 " Editing
