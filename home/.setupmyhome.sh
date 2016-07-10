@@ -29,7 +29,7 @@ wget_to_as https://raw.githubusercontent.com/mavnn/mintty-colors-solarized/maste
     sed -i -e 's/CursorColour=    220,  50,  47/CursorColour=    147, 161, 161/g' ~/.mintty/themes/solarized-dark.minttyrc
 wget_to_as https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark ~ .dircolors
 mkdir -p ~/.vim/undodir
-pip install flake8 jedi rope
+pip install flake8 jedi ropevim
 
 # Set up environment
 ~/.homesick/repos/homeshick/bin/homeshick link
