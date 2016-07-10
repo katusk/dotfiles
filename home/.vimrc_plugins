@@ -57,9 +57,9 @@ nnoremap <leader>qt :Tabularize /
 vnoremap <leader>qt :Tabularize /
 
 " Vim-Slime
-nnoremap <leader>ss <Plug>SlimeLineSend
-xnoremap <leader>ss <Plug>SlimeRegionSend
-nnoremap <leader>sp <Plug>SlimeParagraphSend
+nmap <leader>ss <Plug>SlimeLineSend
+xmap <leader>ss <Plug>SlimeRegionSend
+nmap <leader>sp <Plug>SlimeParagraphSend
 
 " Refactor with ropevim
 let g:ropevim_local_prefix="<leader>r"
@@ -136,11 +136,11 @@ let g:EditorConfig_exclude_patterns=['fugitive://.*']
 " Vim-Slime                                  github.com/jpalardy/vim-slime
 "-------------------------------------------------------------------------
 let g:slime_no_mappings=1
-let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 if has("win32") || has("win64")
     let g:slime_target="conemu"
 else
     let g:slime_target="tmux"
+    let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 endif
 if executable("ipython") &&
     \ exists("*exepath") && exepath("ipython") !~ "cygdrive"
