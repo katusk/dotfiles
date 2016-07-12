@@ -18,11 +18,6 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t
@@ -37,9 +32,6 @@ values."
             shell-default-position 'bottom)
      syntax-checking
      version-control
-     ;; ----------------------------------------------------------------
-     ;; Additional layers
-     ;; ----------------------------------------------------------------
      python
      )
    ;; List of additional packages that will be installed without being
@@ -111,7 +103,7 @@ values."
                                :size 20
                                :weight normal
                                :width normal
-                               :powerline-scale 1.3)
+                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -275,9 +267,20 @@ you should place your code here."
     (if (not register)
         (evil-delete-line beg end type ?_ yank-handler)
       (evil-delete-line beg end type register yank-handler)))
-  (define-key evil-normal-state-map "-d" 'evil-destroy)
-  (define-key evil-visual-state-map "-d" 'evil-destroy)
-  (define-key evil-normal-state-map "-D" 'evil-destroy-line)
+  (spacemacs/declare-prefix "-" "evil-destroy-prefix")
+  (spacemacs/declare-prefix "-" "evil-destroy-prefix")
+  (define-key evil-normal-state-map (kbd "-d") 'evil-destroy)
+  (define-key evil-visual-state-map (kbd "-d") 'evil-destroy)
+  (define-key evil-normal-state-map (kbd "-D") 'evil-destroy-line)
+
+  ;; Display the fill column
+  (spacemacs/toggle-fill-column-indicator-on)
+  ;; No fancy powerline separators please
+  (setq powerline-default-separator nil)
+  (spaceline-compile)
+
+  ;; Keep the server alive. Quit and kill server by <SPC q q>.
+  (setq-default dotspacemacs-persistent-server t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -347,7 +350,7 @@ you should place your code here."
      (140 . "#989200")
      (160 . "#8E9500")
      (180 . "#A6E22E")
-     (200 . "#729A1E")
+
      (220 . "#609C3C")
      (240 . "#4E9D5B")
      (260 . "#3C9F79")
