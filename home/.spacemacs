@@ -268,7 +268,6 @@ you should place your code here."
         (evil-delete-line beg end type ?_ yank-handler)
       (evil-delete-line beg end type register yank-handler)))
   (spacemacs/declare-prefix "-" "evil-destroy-prefix")
-  (spacemacs/declare-prefix "-" "evil-destroy-prefix")
   (define-key evil-normal-state-map (kbd "-d") 'evil-destroy)
   (define-key evil-visual-state-map (kbd "-d") 'evil-destroy)
   (define-key evil-normal-state-map (kbd "-D") 'evil-destroy-line)
