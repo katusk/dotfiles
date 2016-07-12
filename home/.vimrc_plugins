@@ -152,7 +152,7 @@ endif
 let delimitMate_expand_cr=2
 let delimitMate_expand_space=1
 let delimitMate_jump_expansion=1
-augroup myvimrc_delimitMate_augroup
+augroup myaugroup_delimitMate
     au FileType k,q let b:delimitMate_matchpairs = "(:),[:],{:}"
     au FileType k,q let b:delimitMate_quotes = "\""
 augroup END

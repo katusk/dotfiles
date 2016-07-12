@@ -67,7 +67,7 @@ set incsearch          " Show search matches as you type
 
 set splitbelow         " More natural :split behaviour
 set splitright         " More natural :vsplit behaviour
-augroup myvimrc_PreviewOnTop_augroup
+augroup myaugroup_PreviewOnTop
     autocmd InsertEnter * set nosplitbelow
     autocmd InsertLeave * set splitbelow
 augroup END
@@ -120,7 +120,7 @@ set tags=./tags;
 " File type plugins
 "=========================================================================
 filetype plugin indent on
-augroup myvimrc_FileType_augroup
+augroup myaugroup_FileType
     autocmd FileType make set noexpandtab
     autocmd FileType gitconfig set noexpandtab
     autocmd FileType python
