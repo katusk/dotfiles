@@ -257,11 +257,22 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
   (define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
   ;; Do not yank deleted text
-  (evil-define-operator evil-delete-into-null-register (beg end type register yank-handler)
+  (evil-define-operator evil-destroy (beg end type register yank-handler)
     (interactive "<R><x><y>")
-    (evil-delete beg end type ?_ yank-handler))
-  (define-key evil-normal-state-map (kbd "-d") 'evil-delete-into-null-register)
-  (define-key evil-visual-state-map (kbd "-d") 'evil-delete-into-null-register)
+    (if (not register)
+        (evil-delete beg end type ?_ yank-handler)
+      (evil-delete beg end type register yank-handler)))
+  (evil-define-operator evil-destroy-line (beg end type register yank-handler)
+    "Delete to end of line."
+    :motion nil
+    :keep-visual t
+    (interactive "<R><x>")
+    (if (not register)
+        (evil-delete-line beg end type ?_ yank-handler)
+      (evil-delete-line beg end type register yank-handler)))
+  (define-key evil-normal-state-map "-d" 'evil-destroy)
+  (define-key evil-visual-state-map "-d" 'evil-destroy)
+  (define-key evil-normal-state-map "-D" 'evil-destroy-line)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
