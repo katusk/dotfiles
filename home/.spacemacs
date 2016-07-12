@@ -247,6 +247,15 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; Set escape keybinding
+  (setq-default evil-escape-key-sequence "jk")
+  ;; A bit more convenient Ex commands
+  (define-key evil-normal-state-map (kbd "RET") 'evil-ex)
+  ;; Navigate using visual lines
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  (define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
+  (define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
