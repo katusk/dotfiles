@@ -180,7 +180,7 @@ nnoremap <silent> k gk
 nnoremap <silent> gj j
 nnoremap <silent> gk k
 " Quickly clear the search buffer
-nnoremap <silent> ,/ :nohls<CR>
+nnoremap <silent> <leader>sc :nohls<CR>
 " Do not jump to next occurrence on *
 noremap <silent> * :let @/='\<'.expand('<cword>').'\>'\|set hls<CR>
 noremap <silent> g* :let @/=expand('<cword>')\|set hls<CR>
@@ -192,26 +192,22 @@ nnoremap <silent> ,d "_d
 vnoremap <silent> ,d "_d
 
 " Relative line number toggle
-nnoremap <silent> <leader>,r :if &rnu\|se nornu nu\|else\|se nu rnu\|en<CR>
+nnoremap <silent> <leader>tr :if &rnu\|se nornu nu\|else\|se nu rnu\|en<CR>
 " Disable format options when pasting for sanity
-nnoremap <silent> <leader>,p :set invpaste<CR>
+nnoremap <silent> <F2> :set invpaste<CR>
 
 " Quickly edit/reload the configuration file
-nnoremap <silent> <leader>fed :e $MYVIMRC<CR>
-nnoremap <silent> <leader>fep :exe ':e '.$MYVIMRC.'_plugins'<CR>
-nnoremap <silent> <leader>feo :exe ':e '.$MYVIMRC.'_plugout'<CR>
-nnoremap <silent> <leader>feg :e $MYGVIMRC<CR>
-nnoremap <silent> <leader>fsd :so $MYVIMRC<CR>
-nnoremap <silent> <leader>fsg :so $MYGVIMRC<CR>
+nnoremap <leader>fed :e ~/.vimrc*<c-z>
+nnoremap <silent> <leader>feR :so $MYVIMRC<CR>
 
 " Cycle thru buffers, easier buffer switching
 nnoremap <silent> <leader>bn :bnext<CR>
 nnoremap <silent> <leader>bp :bprevious<CR>
-nnoremap <silent> <leader>b# :b#<CR>
-nnoremap <leader>bl :ls<CR>:b<space>
+nnoremap <silent> <leader><tab> :b#<CR>
+nnoremap <leader>bb :ls<CR>:b<space>
 
 " Explore directory of current file
-nnoremap <leader>ee :Explore!<CR>
+nnoremap <leader>fj :Explore!<CR>
 
 " Local config
 "=========================================================================

@@ -49,16 +49,16 @@ call plug#end()
 " Plugin mappings              " NB No comment in same line as map command
 "=========================================================================
 " Explorer bar toggles and CtrlP special
-nnoremap <silent> <leader>,n :NERDTreeToggle<CR>
-nnoremap <silent> <leader>,t :TagbarToggle<CR>
-let g:ctrlp_map='<c-p>'
+nnoremap <silent> <leader>ft :NERDTreeToggle<CR>
+nnoremap <silent> <leader>sj :TagbarToggle<CR>
+let g:ctrlp_map='<space>ff'
 
 " GoTo and Get commands with YouCompleteMe and FSwitch
-nnoremap <silent> <leader>go :FSHere<CR>
-let g:ycm_key_detailed_diagnostics='<leader>gi'
-nnoremap <silent> <leader>gg :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gf :YcmCompleter GoToReferences<CR>
-nnoremap <silent> <leader>gd :YcmCompleter GetDoc<CR>
+nnoremap <silent> ,go :FSHere<CR>
+nnoremap <silent> ,gg :YcmCompleter GoTo<CR>
+nnoremap <silent> ,gu :YcmCompleter GoToReferences<CR>
+nnoremap <silent> ,gd :YcmCompleter GetDoc<CR>
+let g:ycm_key_detailed_diagnostics=',gi'
 
 " Autoformat the file (also see gq) and Tabularize with ease
 nnoremap <silent> <leader>qf :Autoformat<CR>
@@ -66,13 +66,13 @@ nnoremap <leader>qt :Tabularize /
 vnoremap <leader>qt :Tabularize /
 
 " Vim-Slime
-nmap <leader>ss <Plug>SlimeLineSend
-xmap <leader>ss <Plug>SlimeRegionSend
-nmap <leader>sp <Plug>SlimeParagraphSend
+nmap ,ss <Plug>SlimeLineSend
+xmap ,ss <Plug>SlimeRegionSend
+nmap ,sp <Plug>SlimeParagraphSend
 
 " Refactor with ropevim
-let g:ropevim_local_prefix="<leader>r"
-let g:ropevim_global_prefix="<leader>rp"
+let g:ropevim_local_prefix="<leader>mr"
+let g:ropevim_global_prefix="<leader>mp"
 let g:ropevim_enable_shortcuts=0
 
 " UltiSnips
