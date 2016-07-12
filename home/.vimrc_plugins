@@ -54,11 +54,11 @@ nnoremap <silent> <leader>sj :TagbarToggle<CR>
 let g:ctrlp_map='<space>ff'
 
 " GoTo and Get commands with YouCompleteMe and FSwitch
-nnoremap <silent> ,go :FSHere<CR>
-nnoremap <silent> ,gg :YcmCompleter GoTo<CR>
-nnoremap <silent> ,gu :YcmCompleter GoToReferences<CR>
-nnoremap <silent> ,gd :YcmCompleter GetDoc<CR>
-let g:ycm_key_detailed_diagnostics=',gi'
+nnoremap <silent> <localleader>go :FSHere<CR>
+nnoremap <silent> <localleader>gg :YcmCompleter GoTo<CR>
+nnoremap <silent> <localleader>gu :YcmCompleter GoToReferences<CR>
+nnoremap <silent> <localleader>gd :YcmCompleter GetDoc<CR>
+let g:ycm_key_detailed_diagnostics='<localleader>gi'
 
 " Autoformat the file (also see gq) and Tabularize with ease
 nnoremap <silent> <leader>qf :Autoformat<CR>
@@ -66,9 +66,9 @@ nnoremap <leader>qt :Tabularize /
 vnoremap <leader>qt :Tabularize /
 
 " Vim-Slime
-nmap ,ss <Plug>SlimeLineSend
-xmap ,ss <Plug>SlimeRegionSend
-nmap ,sp <Plug>SlimeParagraphSend
+nmap <localleader>ss <Plug>SlimeLineSend
+xmap <localleader>ss <Plug>SlimeRegionSend
+nmap <localleader>sp <Plug>SlimeParagraphSend
 
 " Refactor with ropevim
 let g:ropevim_local_prefix="<leader>mr"
@@ -76,7 +76,7 @@ let g:ropevim_global_prefix="<leader>mp"
 let g:ropevim_enable_shortcuts=0
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<leader><Tab>"
+let g:UltiSnipsExpandTrigger="<localleader><Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 

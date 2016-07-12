@@ -19,6 +19,7 @@ endif
 set nocompatible        " Turn off Vi compatibility for all Vim features
 set cpo+=$              " Show '$' after the last character to be changed
 let mapleader=" "       " Change the mapleader from \ to <space>
+let maplocalleader=","  " Set local leader here globally
 filetype off            " Ensure adding ftdetect scripts below always work
 let g:myplug_flags=[]   " Enable plugins by adding flags, see .vimrc_plugins
 if filereadable(expand("~/.vimrc_local_init"))
@@ -188,8 +189,8 @@ noremap <silent> g* :let @/=expand('<cword>')\|set hls<CR>
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 " Do not yank deleted text
-nnoremap <silent> ,d "_d
-vnoremap <silent> ,d "_d
+nnoremap <silent> <localleader>d "_d
+vnoremap <silent> <localleader>d "_d
 
 " Relative line number toggle
 nnoremap <silent> <leader>tr :if &rnu\|se nornu nu\|else\|se nu rnu\|en<CR>
