@@ -189,8 +189,8 @@ noremap <silent> g* :let @/=expand('<cword>')\|set hls<CR>
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 " Do not yank deleted text
-nnoremap <silent> <localleader>d "_d
-vnoremap <silent> <localleader>d "_d
+nnoremap <silent> -d "_d
+vnoremap <silent> -d "_d
 
 " Relative line number toggle
 nnoremap <silent> <leader>tr :if &rnu\|se nornu nu\|else\|se nu rnu\|en<CR>

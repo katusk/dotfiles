@@ -256,6 +256,12 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
   (define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
+  ;; Do not yank deleted text
+  (evil-define-operator evil-delete-into-null-register (beg end type register yank-handler)
+    (interactive "<R><x><y>")
+    (evil-delete beg end type ?_ yank-handler))
+  (define-key evil-normal-state-map (kbd "-d") 'evil-delete-into-null-register)
+  (define-key evil-visual-state-map (kbd "-d") 'evil-delete-into-null-register)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
