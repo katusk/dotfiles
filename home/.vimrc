@@ -20,6 +20,9 @@ set nocompatible        " Turn off Vi compatibility for all Vim features
 set cpo+=$              " Show '$' after the last character to be changed
 let mapleader=" "       " Change the mapleader from \ to <space>
 filetype off            " Ensure adding ftdetect scripts below always work
+if filereadable(expand("~/.vimrc_local_init"))
+    source ~/.vimrc_local_init
+endif
 
 " Plugins
 "=========================================================================
