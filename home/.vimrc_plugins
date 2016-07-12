@@ -1,3 +1,12 @@
+function! s:myplug_if(flag, plugin)
+    exe "let flag_index=index(g:myplug_flags, ".a:flag.")"
+    if flag_index >= 0
+        exe "Plug ".a:plugin
+    endif
+endfunction
+
+command! -nargs=+ MyPlugIf call s:myplug_if(<f-args>)
+
 " Managed plugins
 "=========================================================================
 call plug#begin('~/.vim/bundle')
@@ -26,7 +35,7 @@ Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'python-rope/ropevim'
-Plug 'Valloric/YouCompleteMe'
+MyPlugIf 'ycm' 'Valloric/YouCompleteMe'
 " Pretty printing
 Plug 'Chiel92/vim-autoformat'
 " Editing

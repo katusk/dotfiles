@@ -20,6 +20,7 @@ set nocompatible        " Turn off Vi compatibility for all Vim features
 set cpo+=$              " Show '$' after the last character to be changed
 let mapleader=" "       " Change the mapleader from \ to <space>
 filetype off            " Ensure adding ftdetect scripts below always work
+let g:myplug_flags=[]   " Enable plugins by adding flags, see .vimrc_plugins
 if filereadable(expand("~/.vimrc_local_init"))
     source ~/.vimrc_local_init
 endif
@@ -191,7 +192,7 @@ nnoremap <silent> ,d "_d
 vnoremap <silent> ,d "_d
 
 " Relative line number toggle
-nnoremap <silent> <leader>,r :if &rnu\|se nornu nu\|else\|se nu rnu\|endif<CR>
+nnoremap <silent> <leader>,r :if &rnu\|se nornu nu\|else\|se nu rnu\|en<CR>
 " Disable format options when pasting for sanity
 nnoremap <silent> <leader>,p :set invpaste<CR>
 
