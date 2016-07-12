@@ -5,14 +5,14 @@ function! s:myplug_if(flag, plugin)
     endif
 endfunction
 
-command! -nargs=+ MyPlugIf call s:myplug_if(<f-args>)
+command! -nargs=+ -bar MyPlugIf call s:myplug_if(<f-args>)
 
 " Managed plugins
 "=========================================================================
 call plug#begin('~/.vim/bundle')
 " Interoperability
 Plug 'jpalardy/vim-slime'
-Plug 'editorconfig/editorconfig-vim'
+MyPlugIf 'editorconfig' 'editorconfig/editorconfig-vim'
 " Color themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'jnurmine/Zenburn'
@@ -26,15 +26,15 @@ Plug 'kien/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
+MyPlugIf 'ctags' 'majutsushi/tagbar'
 " Version control
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+MyPlugIf 'git' 'airblade/vim-gitgutter'
+MyPlugIf 'git' 'tpope/vim-fugitive'
 " Code analysis and completion
 Plug 'scrooloose/syntastic'
-Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
+MyPlugIf 'ctags' 'xolox/vim-easytags' | MyPlugIf 'ctags' 'xolox/vim-misc'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'python-rope/ropevim'
+MyPlugIf 'python' 'python-rope/ropevim'
 MyPlugIf 'ycm' 'Valloric/YouCompleteMe'
 " Pretty printing
 Plug 'Chiel92/vim-autoformat'
