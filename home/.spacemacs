@@ -254,7 +254,7 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
   (define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
   ;; Automatically highlight symbol under cursor
-  (setq ahs-idle-interval 1.0)
+  (setq ahs-idle-interval 0.5)
   (spacemacs/toggle-automatic-symbol-highlight-on)
   ;; Do not yank deleted text
   (evil-define-operator evil-destroy (beg end type register yank-handler)
