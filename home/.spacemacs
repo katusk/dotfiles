@@ -276,8 +276,7 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "-D") 'evil-destroy-line)
 
   ;; Display the fill column
-  (add-hook 'after-change-major-mode-hook
-            'spacemacs/toggle-fill-column-indicator-on)
+  (add-hook 'after-change-major-mode-hook 'fci-mode)
   ;; No fancy powerline separators please
   (setq powerline-default-separator nil)
   (spaceline-compile)
