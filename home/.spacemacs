@@ -25,7 +25,7 @@ values."
      emacs-lisp
      git
      markdown
-     org
+     ;; org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -201,7 +201,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -254,7 +254,7 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
   (define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
   ;; Automatically highlight symbol under cursor
-  (setq ahs-idle-interval 0.5)
+  (setq ahs-idle-interval 0.4)
   (spacemacs/toggle-automatic-symbol-highlight-on)
   ;; Do not yank deleted text
   (evil-define-operator evil-destroy (beg end type register yank-handler)
@@ -276,7 +276,8 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "-D") 'evil-destroy-line)
 
   ;; Display the fill column
-  (spacemacs/toggle-fill-column-indicator-on)
+  (add-hook 'after-change-major-mode-hook
+            'spacemacs/toggle-fill-column-indicator-on)
   ;; No fancy powerline separators please
   (setq powerline-default-separator nil)
   (spaceline-compile)
@@ -284,18 +285,3 @@ you should place your code here."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (alert log4e gntp markdown-mode request gitignore-mode fringe-helper git-gutter+ git-gutter flycheck magit magit-popup git-commit with-editor pos-tip company yasnippet anaconda-mode pythonic f auto-complete rainbow-delimiters xterm-color ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package toc-org spacemacs-theme spaceline solarized-theme smooth-scrolling smeargle shell-pop restart-emacs quelpa pyvenv pytest pyenv-mode py-yapf popwin pip-requirements persp-mode pcre2el paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help elisp-slime-nav diff-hl define-word cython-mode company-statistics company-quickhelp company-anaconda clean-aindent-mode buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
