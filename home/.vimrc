@@ -198,7 +198,7 @@ nnoremap <silent> <leader>tr :if &rnu\|se nornu nu\|else\|se nu rnu\|en<CR>
 nnoremap <silent> <F2> :set invpaste<CR>
 
 " Quickly edit/reload the configuration file
-nnoremap <leader>fed :e ~/.vimrc*<c-z>
+nnoremap <leader>fed :e ~/.*vimrc*<c-z>
 nnoremap <silent> <leader>feR :so $MYVIMRC<CR>
 
 " Cycle thru buffers, easier buffer switching
