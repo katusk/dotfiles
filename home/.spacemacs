@@ -280,6 +280,10 @@ you should place your code here."
   ;; No fancy powerline separators please
   (setq powerline-default-separator nil)
   (spaceline-compile)
+
+  ;; See https://github.com/syl20bnr/spacemacs/issues/2974
+  (evil-define-key 'insert company-quickhelp-mode-map
+    (kbd "C-k") 'company-select-previous)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
