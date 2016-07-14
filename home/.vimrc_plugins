@@ -61,9 +61,9 @@ nnoremap <silent> <localleader>gd :YcmCompleter GetDoc<CR>
 let g:ycm_key_detailed_diagnostics='<localleader>gi'
 
 " Autoformat the file (also see gq) and Tabularize with ease
-nnoremap <silent> <leader>qf :Autoformat<CR>
-nnoremap <leader>qt :Tabularize /
-vnoremap <leader>qt :Tabularize /
+nnoremap <silent> <localleader>= :Autoformat<CR>
+nnoremap <localleader>t :Tabularize /
+vnoremap <localleader>t :Tabularize /
 
 " Vim-Slime
 nmap <localleader>ss <Plug>SlimeLineSend
@@ -71,8 +71,8 @@ xmap <localleader>ss <Plug>SlimeRegionSend
 nmap <localleader>sp <Plug>SlimeParagraphSend
 
 " Refactor with ropevim
-let g:ropevim_local_prefix="<leader>mr"
-let g:ropevim_global_prefix="<leader>mp"
+let g:ropevim_local_prefix="<localleader>r"
+let g:ropevim_global_prefix="<localleader>p"
 let g:ropevim_enable_shortcuts=0
 
 " UltiSnips
