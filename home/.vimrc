@@ -202,6 +202,7 @@ nnoremap <leader>fed :e ~/.*vimrc*<c-z>
 nnoremap <silent> <leader>feR :so $MYVIMRC<CR>
 
 " Cycle thru buffers, easier buffer switching
+nnoremap <silent> <leader>bd :bdelete<CR>
 nnoremap <silent> <leader>bn :bnext<CR>
 nnoremap <silent> <leader>bp :bprevious<CR>
 nnoremap <silent> <leader><tab> :b#<CR>

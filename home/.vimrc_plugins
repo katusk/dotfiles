@@ -70,10 +70,13 @@ nmap <localleader>ss <Plug>SlimeLineSend
 xmap <localleader>ss <Plug>SlimeRegionSend
 nmap <localleader>sp <Plug>SlimeParagraphSend
 
-" Refactor with ropevim
-let g:ropevim_local_prefix="<localleader>r"
-let g:ropevim_global_prefix="<localleader>p"
+" Refactor with ropevim; remove global mappings, and define my own properly
+let g:ropevim_local_prefix="<localleader><c-c>r"
+let g:ropevim_global_prefix="<localleader><c-x>p"
 let g:ropevim_enable_shortcuts=0
+augroup myaugroup_FileType_python | autocmd FileType python
+\ nnoremap <buffer> <localleader>rr :RopeRename<CR>
+augroup END
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<localleader><Tab>"
