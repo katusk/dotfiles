@@ -278,6 +278,7 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "-D") 'evil-destroy-line)
 
   ;; Display the fill column
+  (setq fci-always-use-textual-rule t)
   (add-hook 'after-change-major-mode-hook 'fci-mode)
   ;; No fancy powerline separators please
   (setq powerline-default-separator nil)
