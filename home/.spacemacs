@@ -277,6 +277,9 @@ you should place your code here."
   (define-key evil-visual-state-map (kbd "-d") 'evil-destroy)
   (define-key evil-normal-state-map (kbd "-D") 'evil-destroy-line)
 
+  ;; Python
+  (setq python-fill-column 79)
+
   ;; Display the fill column
   (setq fci-always-use-textual-rule t)
   (add-hook 'after-change-major-mode-hook 'fci-mode)
