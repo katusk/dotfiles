@@ -29,7 +29,9 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      syntax-checking
-     version-control
+     (version-control :variables
+                      version-control-diff-tool 'diff-hl
+                      version-control-global-margin t)
      python
      ranger
      semantic
