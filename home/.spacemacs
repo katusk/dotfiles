@@ -282,7 +282,8 @@ you should place your code here."
 
   ;; Display the fill column
   (setq fci-always-use-textual-rule t)
-  (add-hook 'after-change-major-mode-hook 'fci-mode)
+  (add-hook 'after-change-major-mode-hook
+            (lambda () (if buffer-file-name (fci-mode t))))
   ;; No fancy powerline separators please
   (setq powerline-default-separator nil)
   (spaceline-compile)
