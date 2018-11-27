@@ -42,4 +42,4 @@ export PATH=`echo $PATH|sed -e 's/:\/cygdrive\/[^:]*//g'`:~/.local/bin:~/bin
 export MC_SKIN=~/.config/mc/colors/solarized.ini
 export LYNX_LSS=~/.lynx.lss
 
-eval `dircolors ~/.dircolors`
+if type dircolors &> /dev/null; then eval `dircolors ~/.dircolors`; fi
