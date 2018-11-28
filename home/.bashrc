@@ -23,11 +23,15 @@ alias dotfiles="cd ~/.homesick/repos/dotfiles/home"
 alias tmux-current-vi-binds="tmux_list_vi_binds ~/.tmux.conf"
 alias tmux-default-vi-binds="tmux_list_vi_binds /dev/null"
 
-alias la='ls --color=auto -A'
-alias ll='ls --color=auto -l'
-alias lla='ls --color=auto -la'
-alias l1='ls --color=auto -1'
-alias l1a='ls --color=auto -1A'
+case "$OSTYPE" in
+    darwin*) alias lsc='env CLICOLOR_FORCE=1 ls';;
+    *)       alias lsc='ls --color=always';;
+esac
+alias la='ls -A'
+alias ll='ls -l'
+alias lla='ls -la'
+alias l1='ls -1'
+alias l1a='ls -1A'
 alias grepc='grep --color=always'
 alias lessc='less -R'
 
