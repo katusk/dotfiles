@@ -30,7 +30,7 @@ wget_to_as https://raw.githubusercontent.com/mavnn/mintty-colors-solarized/maste
 wget_to_as https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark ~ .dircolors
 mkdir -p ~/.vim/undodir
 if type pip &> /dev/null; then
-    pip install flake8 jedi ropevim
+    pip install --user flake8 jedi ropevim || echo "*** Errors occurred during pip install ***"
 else
     echo "*** Skipping pip installs as pip is not found ***"
 fi
