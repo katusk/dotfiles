@@ -9,6 +9,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific environment, startup programs, aliases, functions etc.
+if [ -z "$LANG" ]; then export LANG=en_US.UTF-8; fi
 set -o vi
 shopt -s histappend
 
@@ -33,7 +34,6 @@ alias lessc='less -R'
 export PS1='[\u@\h \W]\$ '
 export EDITOR=vim
 export CLICOLOR=1
-if [ -z "$LANG" ]; then export LANG=en_US.UTF-8; fi
 
 export HISTSIZE=8192
 export HISTFILESIZE=65536
