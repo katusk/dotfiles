@@ -19,12 +19,12 @@ function advise_install {
 }
 
 # Install homeshick, my dotfiles, vim plugin manager, etc.
-git_pull_or_clone git://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
-git_pull_or_clone git://github.com/katusk/dotfiles.git ~/.homesick/repos/dotfiles
-git_pull_or_clone git://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
+git_pull_or_clone git@github.com:andsens/homeshick.git ~/.homesick/repos/homeshick
+git_pull_or_clone git@github.com:katusk/dotfiles.git ~/.homesick/repos/dotfiles
+git_pull_or_clone git@github.com:tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 wget -nc -P ~/.vim/autoload https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 wget -nc -P ~/.config/mc/colors https://raw.githubusercontent.com/iwfmp/mc-solarized-skin/master/solarized.ini
-wget_to_as https://raw.githubusercontent.com/willnorris/dotfiles/master/lynx.lss ~ .lynx.lss
+wget_to_as https://raw.githubusercontent.com/willnorris/dotfiles/refs/heads/main/config/lynx/lynx.lss ~ .lynx.lss
 wget_to_as https://raw.githubusercontent.com/mavnn/mintty-colors-solarized/master/.minttyrc.dark ~/.mintty/themes solarized-dark.minttyrc &&
     sed -i -e 's/CursorColour=    220,  50,  47/CursorColour=    147, 161, 161/g' ~/.mintty/themes/solarized-dark.minttyrc
 wget_to_as https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark ~ .dircolors
@@ -37,7 +37,7 @@ fi
 
 # Set up environment
 ~/.homesick/repos/homeshick/bin/homeshick link
-vim +PlugUpgrade +PlugInstall +qall # +PlugUpdate +PlugClean
+vim +PlugUpgrade +PlugInstall +qall || echo "*** Errors occurred during vim PlugInstall ***" # +PlugUpdate +PlugClean
 ~/.tmux/plugins/tpm/bin/install_plugins # ~/.tmux/plugins/tpm/bin/update_plugins all
 
 # Reminders
