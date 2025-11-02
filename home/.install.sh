@@ -13,7 +13,7 @@ function advise_install {
     done
 }
 
-# Install homeshick, my dotfiles, vim plugin manager, and a bit more
+# Install homeshick, my dotfiles, tmux plugin manager, and do a bit more
 git_pull_or_clone git@github.com:andsens/homeshick.git ~/.homesick/repos/homeshick
 git_pull_or_clone git@github.com:katusk/dotfiles.git ~/.homesick/repos/dotfiles
 git_pull_or_clone git@github.com:tmux-plugins/tpm.git ~/.tmux/plugins/tpm
