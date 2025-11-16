@@ -4,4 +4,5 @@ after installation. Reminders:
 
 - `mc`, `tig`, `lnav`, `lynx`
 - [Solarized](http://ethanschoonover.com/solarized)
+- [LazyVim](https://www.lazyvim.org/)
 - [YouCompleteMe Installation](https://github.com/Valloric/YouCompleteMe#installation)
