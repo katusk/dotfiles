@@ -48,3 +48,8 @@ export MC_SKIN=~/.config/mc/colors/solarized.ini
 export LYNX_LSS=~/.lynx.lss
 
 if type dircolors &> /dev/null; then eval `dircolors ~/.dircolors`; fi
+
+# Source local definitions
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local
+fi
