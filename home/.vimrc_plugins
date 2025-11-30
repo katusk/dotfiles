@@ -22,7 +22,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'katusk/vim-qkdb-syntax'
 Plug 'tmux-plugins/vim-tmux'
 " Navigation
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
@@ -31,7 +31,9 @@ MyPlugIf 'ctags' 'majutsushi/tagbar'
 MyPlugIf 'git' 'airblade/vim-gitgutter'
 MyPlugIf 'git' 'tpope/vim-fugitive'
 " Code analysis and completion
+" TODO: Syntastic is no longer maintained, use https://github.com/dense-analysis/ale
 Plug 'scrooloose/syntastic'
+" TODO: Last vim-easytags commit 10 years ago?
 MyPlugIf 'ctags' 'xolox/vim-easytags' | MyPlugIf 'ctags' 'xolox/vim-misc'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 MyPlugIf 'python' 'python-rope/ropevim'
