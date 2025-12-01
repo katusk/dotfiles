@@ -62,6 +62,11 @@ This function should only modify configuration layer settings."
      ranger
      semantic
      ;; smex
+     (rust :variables
+       lsp-rust-analyzer-cargo-auto-reload t
+       rustic-format-on-save t)
+     toml
+     dap
     )
 
 
@@ -673,5 +678,56 @@ before packages are loaded."
   )
 
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+      '(ace-link aggressive-indent all-the-icons auto-compile auto-highlight-symbol
+           auto-yasnippet avy-jump-helm-line browse-at-remote bui
+           centered-cursor-mode clean-aindent-mode code-cells code-review
+           column-enforce-mode company-quickhelp cython-mode define-word devdocs
+           diff-hl diminish dired-quick-sort disable-mouse dotenv-mode
+           drag-stuff dumb-jump eat edit-indirect elisp-def elisp-demos
+           elisp-slime-nav emr esh-help eshell-prompt-extras eshell-z
+           eval-sexp-fu evil-anzu evil-args evil-cleverparens evil-collection
+           evil-easymotion evil-escape evil-evilified-state evil-exchange
+           evil-goggles evil-iedit-state evil-indent-plus evil-lion
+           evil-lisp-state evil-matchit evil-mc evil-nerd-commenter evil-numbers
+           evil-surround evil-textobj-line evil-tutor evil-unimpaired
+           evil-visual-mark-mode evil-visualstar expand-region eyebrowse
+           fancy-battery flycheck-elsa flycheck-package flycheck-pos-tip
+           flyspell-correct-helm gh-md git-link git-messenger git-modes
+           git-timemachine gitignore-templates golden-ratio google-translate
+           helm-ag helm-c-yasnippet helm-comint helm-company helm-descbinds
+           helm-ls-git helm-lsp helm-make helm-mode-manager helm-org
+           helm-projectile helm-purpose helm-pydoc helm-swoop helm-xref
+           hide-comnt highlight-indentation highlight-numbers
+           highlight-parentheses hl-todo holy-mode hungry-delete hybrid-mode
+           indent-guide info+ inspector link-hint live-py-mode lorem-ipsum
+           lsp-origami lsp-treemacs lsp-ui macrostep markdown-toc multi-line
+           multi-term multi-vterm mwim nameless open-junk-file org-superstar
+           overseer page-break-lines paradox password-generator pcre2el
+           pip-requirements pipenv pippel poetry popwin py-isort pydoc
+           pyenv-mode pylookup python-pytest quickrun ranger restart-emacs
+           ron-mode rust-mode shell-pop smeargle solarized-theme space-doc
+           spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+           sphinx-doc srefactor string-edit-at-point string-inflection
+           symbol-overlay symon term-cursor terminal-here toc-org toml-mode
+           treemacs-evil treemacs-icons-dired treemacs-magit treemacs-persp
+           treemacs-projectile undo-fu-session unfill vi-tilde-fringe
+           volatile-highlights vundo wgrep winum writeroom-mode ws-butler
+           yasnippet-snippets)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
