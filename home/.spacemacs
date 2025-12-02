@@ -58,16 +58,16 @@ This function should only modify configuration layer settings."
                       version-control-diff-tool 'diff-hl
                       version-control-global-margin t)
      treemacs
-     python
-     ranger
-     semantic
+     ;; python
+     ;; ranger
+     ;; semantic
      ;; smex
      (rust :variables
        lsp-rust-analyzer-cargo-auto-reload t
        rustic-format-on-save t)
      toml
      dap
-    )
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -103,14 +103,6 @@ It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
-   ;; If non nil ELPA repositories are contacted via HTTPS whenever it's
-   ;; possible. Set it to nil if you have no way to use HTTPS in your
-   ;; environment, otherwise it is strongly recommended to let it set to t.
-   ;; This variable has no effect if Emacs is launched with the parameter
-   ;; `--insecure' which forces the value of this variable to nil.
-   ;; (default t)
-   dotspacemacs-elpa-https t
-
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
    dotspacemacs-elpa-timeout 5
@@ -157,9 +149,6 @@ It should only modify the values of Spacemacs settings."
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
    dotspacemacs-editing-style 'vim
-
-   ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
-   dotspacemacs-verbose-loading nil
 
    ;; If non-nil show the version string in the Spacemacs buffer. It will
    ;; appear as (spacemacs version)@(emacs version)
@@ -234,8 +223,8 @@ It should only modify the values of Spacemacs settings."
    ;; package can be defined with `:package', or a theme can be defined with
    ;; `:location' to download the theme package, refer the themes section in
    ;; DOCUMENTATION.org for the full theme specifications.
-   dotspacemacs-themes '(solarized-dark
-                         solarized-light)
+   dotspacemacs-themes '(spacemacs-dark
+                         spacemacs-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -296,9 +285,6 @@ It should only modify the values of Spacemacs settings."
    ;; works in the GUI. (default nil)
    dotspacemacs-distinguish-gui-tab nil
 
-   ;; If non nil `Y' is remapped to `y$'. (default t)
-   vim-style-remap-Y-to-y$ t
-
    ;; Name of the default layout (default "Default")
    dotspacemacs-default-layout-name "Default"
 
@@ -332,26 +318,6 @@ It should only modify the values of Spacemacs settings."
    ;; paste something, pressing `C-j' and `C-k' several times cycles through the
    ;; elements in the `kill-ring'. (default nil)
    dotspacemacs-enable-paste-transient-state nil
-
-   ;; If non nil then `ido' replaces `helm' for some commands. For now only
-   ;; `find-files' (SPC f f), `find-spacemacs-file' (SPC f e s), and
-   ;; `find-contrib-file' (SPC f e c) are replaced. (default nil)
-   dotspacemacs-use-ido nil
-
-   ;; If non nil, `helm' will try to minimize the space it uses. (default nil)
-   helm-enable-auto-resize nil
-
-   ;; if non nil, the helm header is hidden when there is only one source.
-   ;; (default nil)
-   helm-no-header nil
-
-   ;; define the position to display `helm', options are `bottom', `top',
-   ;; `left', or `right'. (default 'bottom)
-   helm-position 'bottom
-
-   ;; If non nil the paste micro-state is enabled. When enabled pressing `p`
-   ;; several times cycle between the kill ring content. (default nil)
-   dotspacemacs-enable-paste-micro-state t
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
@@ -391,7 +357,7 @@ It should only modify the values of Spacemacs settings."
    ;; put the most likely path on the top of `load-path' to reduce walking
    ;; through the whole `load-path'. It's an experimental feature to speedup
    ;; Spacemacs on Windows. Refer the FAQ.org "load-hints" session for details.
-   dotspacemacs-enable-load-hints t
+   dotspacemacs-enable-load-hints nil
 
    ;; If t, enable the `package-quickstart' feature to avoid full package
    ;; loading, otherwise no `package-quickstart' attemption (default nil).
@@ -520,7 +486,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server t
+   dotspacemacs-persistent-server nil
 
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `ack' and `grep'.
@@ -642,92 +608,8 @@ before packages are loaded."
   ;; Automatically highlight symbol under cursor
   (setq ahs-idle-interval 0.4)
   (spacemacs/toggle-automatic-symbol-highlight-on)
-  ;; Do not yank deleted text
-  (evil-define-operator evil-destroy (beg end type register yank-handler)
-    (interactive "<R><x><y>")
-    (if (not register)
-        (evil-delete beg end type ?_ yank-handler)
-      (evil-delete beg end type register yank-handler)))
-  (evil-define-operator evil-destroy-line (beg end type register yank-handler)
-    "Delete to end of line."
-    :motion nil
-    :keep-visual t
-    (interactive "<R><x>")
-    (if (not register)
-        (evil-delete-line beg end type ?_ yank-handler)
-      (evil-delete-line beg end type register yank-handler)))
-  (spacemacs/declare-prefix "-" "evil-destroy-prefix")
-  (define-key evil-normal-state-map (kbd "-d") 'evil-destroy)
-  (define-key evil-visual-state-map (kbd "-d") 'evil-destroy)
-  (define-key evil-normal-state-map (kbd "-D") 'evil-destroy-line)
-
-  ;; Python
-  (setq python-fill-column 79)
-
-  ;; Display the fill column
-  (setq fci-always-use-textual-rule t)
-  (add-hook 'after-change-major-mode-hook
-            (lambda () (if buffer-file-name (fci-mode t))))
-  ;; No fancy powerline separators please
-  (setq powerline-default-separator nil)
-  (spaceline-compile)
-
-  ;; See https://github.com/syl20bnr/spacemacs/issues/2974
-  (evil-define-key 'insert company-quickhelp-mode-map
-    (kbd "C-k") 'company-select-previous)
   )
 
 
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-      '(ace-link aggressive-indent all-the-icons auto-compile auto-highlight-symbol
-           auto-yasnippet avy-jump-helm-line browse-at-remote bui
-           centered-cursor-mode clean-aindent-mode code-cells code-review
-           column-enforce-mode company-quickhelp cython-mode define-word devdocs
-           diff-hl diminish dired-quick-sort disable-mouse dotenv-mode
-           drag-stuff dumb-jump eat edit-indirect elisp-def elisp-demos
-           elisp-slime-nav emr esh-help eshell-prompt-extras eshell-z
-           eval-sexp-fu evil-anzu evil-args evil-cleverparens evil-collection
-           evil-easymotion evil-escape evil-evilified-state evil-exchange
-           evil-goggles evil-iedit-state evil-indent-plus evil-lion
-           evil-lisp-state evil-matchit evil-mc evil-nerd-commenter evil-numbers
-           evil-surround evil-textobj-line evil-tutor evil-unimpaired
-           evil-visual-mark-mode evil-visualstar expand-region eyebrowse
-           fancy-battery flycheck-elsa flycheck-package flycheck-pos-tip
-           flyspell-correct-helm gh-md git-link git-messenger git-modes
-           git-timemachine gitignore-templates golden-ratio google-translate
-           helm-ag helm-c-yasnippet helm-comint helm-company helm-descbinds
-           helm-ls-git helm-lsp helm-make helm-mode-manager helm-org
-           helm-projectile helm-purpose helm-pydoc helm-swoop helm-xref
-           hide-comnt highlight-indentation highlight-numbers
-           highlight-parentheses hl-todo holy-mode hungry-delete hybrid-mode
-           indent-guide info+ inspector link-hint live-py-mode lorem-ipsum
-           lsp-origami lsp-treemacs lsp-ui macrostep markdown-toc multi-line
-           multi-term multi-vterm mwim nameless open-junk-file org-superstar
-           overseer page-break-lines paradox password-generator pcre2el
-           pip-requirements pipenv pippel poetry popwin py-isort pydoc
-           pyenv-mode pylookup python-pytest quickrun ranger restart-emacs
-           ron-mode rust-mode shell-pop smeargle solarized-theme space-doc
-           spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
-           sphinx-doc srefactor string-edit-at-point string-inflection
-           symbol-overlay symon term-cursor terminal-here toc-org toml-mode
-           treemacs-evil treemacs-icons-dired treemacs-magit treemacs-persp
-           treemacs-projectile undo-fu-session unfill vi-tilde-fringe
-           volatile-highlights vundo wgrep winum writeroom-mode ws-butler
-           yasnippet-snippets)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+;; Do not write anything past this comment. This is where Emacs will
+;; auto-generate custom variable definitions.
