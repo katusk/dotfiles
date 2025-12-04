@@ -4,12 +4,15 @@ return {
     opts = function(_, opts)
       opts.options.section_separators = " "
       opts.options.component_separators = ""
-      table.insert(opts.sections.lualine_x, {
-        "encoding",
-        -- Show '[BOM]' when the file has a byte-order mark
-        show_bomb = true,
-      })
-      table.insert(opts.sections.lualine_x, "fileformat")
+      opts.sections.lualine_z = opts.sections.lualine_y
+      opts.sections.lualine_y = {
+        {
+          "encoding",
+          -- Show '[BOM]' when the file has a byte-order mark
+          show_bomb = true,
+        },
+        "fileformat",
+      }
     end,
   },
 }
