@@ -10,8 +10,8 @@ set guioptions-=rRlLbMm                 " Remove all scroll bars and menu
 " Font setup
 "-------------------------------------------------------------------------
 if has("gui_gtk2")
-    set guifont=Inconsolata\ Medium\ 12
+    set guifont=JetBrainsMonoNerdFontMono 13
 elseif has("gui_win32")
-    set guifont=Consolas:h12:cDEFAULT   " Or Inconsolata:h12:b
+    set guifont=JetBrainsMono\ NFM:h13:cDEFAULT
 endif
 
